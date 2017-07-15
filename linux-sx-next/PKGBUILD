@@ -13,7 +13,7 @@ _basever=413
 _date=170716
 _bfq=v8r12
 _rc=rc1
-_sub=
+_sub=0
 _ver=20170707
 _dlid=26925
 pkgver=${_basekernel}.${_sub}
@@ -77,9 +77,9 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v4.x/linux-${_basekernel}.tar.
 )
 sha256sums=('d5346f9a52adde7f98e408e445e734fa29cc734914fc6cfd99db8c21eef4abdd'
             '4fd44769bf52a7ac11e90651a307aa6e56ca6e1a814e50d750ba8207973bee93'
-            '9c2ba7ed904c29a9b99063d4546bf315605af8bd1f49cf3bf66f2dc0ee9fc330'
+            '71dcfb1450f984be1bfc3a1c98cd623f74338414a0f0a261b4daa3a765720d5d'
             '73d5cdcc878efdc47c6411c9043497df57389424614a73eebc82775ab5f247a2'
-            '5016e07c4afa91866566f6812aa7a4c69537d3abf64076c0307863f45a491e77'
+            '63cdaeefb197e9c78fd7fa0d563af9645c9aaef2175b2ceb65763953139f28dd'
             'b7e7811768cb8c5f02dd18ae9f311c79623f6b89fb2467db1954c5f7e328bd5c'
             '2c01c187d46f76979d94f2082805d577e510d94d5c132fb5dd305aa8b8663e65'
             'faa638a9c53b9f16f5ae6fd31574c9997cebf3026e29449403539bdbf1d912c2'
