@@ -1,0 +1,373 @@
+# Based on the file created for Arch Linux by:
+# Tobias Powalowski <tpowa@archlinux.org>
+# Thomas Baechler <thomas@archlinux.org>
+
+# Maintainer: Philip Müller <philm@manjaro.org>
+# Maintainer: Bernhard Landauer <oberon@manjaro.org>
+
+pkgbase=linux-sx
+pkgname=('linux-sx' 'linux-sx-headers')
+_kernelname=-MANJARO-SX
+_basekernel=4.12
+_basever=412
+_date=170715
+_bfq=v8r12
+_sub=2
+_ver=20170707
+_dlid=26925
+pkgver=${_basekernel}.${_sub}
+pkgrel=0.${_date}
+arch=('x86_64')
+url="http://www.kernel.org/"
+license=('GPL2')
+makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'elfutils' 'linux-firmware')
+options=('!strip')
+source=("https://www.kernel.org/pub/linux/kernel/v4.x/linux-${_basekernel}.tar.xz"
+        #"https://www.kernel.org/pub/linux/kernel/v4.x/testing/linux-${_basekernel}-${_rc}.tar.xz"
+        #https://github.com/torvalds/linux/archive/v${_basekernel}.tar.gz
+        #linux-${_basekernel}${_rc}-${pkgrel}.tar.gz::https://github.com/torvalds/linux/archive/${_git}.tar.gz
+        "http://www.kernel.org/pub/linux/kernel/v4.x/patch-${pkgver}.xz"
+        "https://downloadmirror.intel.com/${_dlid}/eng/microcode-${_ver}.tgz"
+        # the main kernel config files
+        'config'
+        # standard config files for mkinitcpio ramdisk
+        "${pkgbase}.preset"
+        "${pkgbase}.hook"
+        "0001-BFQ-${_bfq}-v${pkgver}.patch::https://github.com/Algodev-github/bfq-mq/compare/650fc87...48a61d0.patch"
+        "0002-BFQ-${_bfq}-v${pkgver}-uuid-block-merge.patch::https://gitlab.com/tom81094/custom-patches/raw/master/bfq-mq/4.13-uuid-block-merge.patch"
+        # Intel Patches
+        # 01XX: General patches
+        '0101-i8042-decrease-debug-message-level-to-info.patch'
+        '0102-init-do_mounts-recreate-dev-root.patch'
+        '0103-Increase-the-ext4-default-commit-age.patch'
+        '0104-silence-rapl.patch'
+        '0105-pci-pme-wakeups.patch'
+        '0106-ksm-wakeups.patch'
+        '0107-intel_idle-tweak-cpuidle-cstates.patch'
+        '0108-xattr-allow-setting-user.-attributes-on-symlinks-by-.patch'
+        '0109-init_task-faster-timerslack.patch'
+        '0110-fs-ext4-fsync-optimize-double-fsync-a-bunch.patch'
+        '0111-overload-on-wakeup.patch'
+        '0112-bootstats-add-printk-s-to-measure-boot-time-in-more-.patch'
+        '0113-fix-initcall-timestamps.patch'
+        '0114-smpboot-reuse-timer-calibration.patch'
+        '0115-raid6-add-Kconfig-option-to-skip-raid6-benchmarking.patch'
+        '0116-Initialize-ata-before-graphics.patch'
+        '0117-reduce-e1000e-boot-time-by-tightening-sleep-ranges.patch'
+        '0118-give-rdrand-some-credit.patch'
+        '0119-e1000e-change-default-policy.patch'
+        '0120-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit.patch'
+        '0121-igb-no-runtime-pm-to-fix-reboot-oops.patch'
+        '0122-tweak-perfbias.patch'
+        '0123-e1000e-increase-pause-and-refresh-time.patch'
+        '0124-kernel-time-reduce-ntp-wakeups.patch'
+        '0125-init-wait-for-partition-and-retry-scan.patch'
+        '0126-print-fsync-count-for-bootchart.patch'
+        # KVM Memory Optimization
+        '0151-mm-Export-do_madvise.patch'
+        '0152-x86-kvm-Notify-host-to-release-pages.patch'
+        '0153-x86-Return-memory-from-guest-to-host-kernel.patch'
+        '0154-sysctl-vm-Fine-grained-cache-shrinking.patch'
+        # Extra features modules
+        # 100X: Accelertor Abstraction Layer (AAL)
+        '1001-fpga-add-AAL-6.3.1.patch'
+        '1002-fpga-add-AAL-to-fpga-Kconfig-and-Makefile.patch'
+        # ARCH Patches
+        # MANJARO Patches
+)
+sha256sums=('a45c3becd4d08ce411c14628a949d08e2433d8cdeca92036c7013980e93858ab'
+            '8447d28c88834bac75653a0370a6f30615688db4756b953720e9b024537e34ac'
+            '4fd44769bf52a7ac11e90651a307aa6e56ca6e1a814e50d750ba8207973bee93'
+            '9c2ba7ed904c29a9b99063d4546bf315605af8bd1f49cf3bf66f2dc0ee9fc330'
+            '43942683a7ff01b180dff7f3de2db4885d43ab3d4e7bd0e1918c3aaf2ee061f4'
+            '5016e07c4afa91866566f6812aa7a4c69537d3abf64076c0307863f45a491e77'
+            'b7e7811768cb8c5f02dd18ae9f311c79623f6b89fb2467db1954c5f7e328bd5c'
+            '37c9f788ab7bfe91171bd678138befc2691f8ab68e17bd921215d17b38f2836a'
+            '2c01c187d46f76979d94f2082805d577e510d94d5c132fb5dd305aa8b8663e65'
+            'faa638a9c53b9f16f5ae6fd31574c9997cebf3026e29449403539bdbf1d912c2'
+            '9488676233fdefd38115b8e14bc4ac9081e15234eaccdbde274b3727802f07da'
+            'f8d9690a4610a6b5ef28fb7bb7f3390f21df97b77965b2ee46d9327702da42c3'
+            '91e84b3ebc36a59caf2852cae8396b47858551fd741ef072d042b39be15d2790'
+            '243b277670039bc53be4272b3d487165d5bbb883788b10adbe7f733cbcec80bc'
+            '94320c5fa79d59a9a51a30ef332d0c16431976998ee49dc54c263219473bac57'
+            'c41d479ff2210e4df4dda028cb8dad3acd04c521f6e520c86e600327afc389ae'
+            'b27dac1358aabcd2324d8dd5f95f1c580716ff3241c4a7ae29127701002fb177'
+            'e98c0096b7e7c3830b7028bb35538792e80b5d821170c2c61d36013d0200c72e'
+            '8c342f398b2fabe4b5c3aa1d8612e79f7c378211aa180a83af66bc1a156065f0'
+            '6d13d6c1069b6e5b6ffd6b25ea3add0fc1bf34fb098d1a781e7f6f192b3d2983'
+            'cc636e07b3be16b65c8fffc325a9f79ca6424bef0634e13d6e5533c9e30ce99d'
+            'cab4489ed8c338c104bc9f12e381beef68797218007e40b91280b4e246e7144f'
+            '4bd66be234068667be5fc6009b9b2026925792d75c1c1178b20111e2be1f150d'
+            '66a438760f92281f7911b8c95552e06d4af07026e2c9dcd2eb5589d69323c892'
+            '0a63845e1f51cdfa68f1655d4522360add346ef5e90c163106971369465baadf'
+            'cf77cd61f2961bf0877d5a51f69b77f1e296659516e9c7fc67ee0a03c69cb158'
+            '2c4336d0bbe0524c66aa3372d8e35943c575e2b3a2f938d5b9d7a859f8d0ce72'
+            '5bd895e3a89ddba426449c1611fc047e6ec6a6acd71dbfb4da84da51d1f8236b'
+            '7f2dcd79a02c11ed2dd6759c92411b313d8c1c81b4c7627c1c56d07a0073330e'
+            'a4742e9c075b59c4a39b225dc35acf372adf28c27fa81e36bfa843ce734361e1'
+            'c3a46cb15281c9b22f6f48c87f0c1fc002e5a54a775d7beab3940cb71d5477cc'
+            'a4dcab38515b055831517462883b716640ec0bae6d8249bc2fb9e1806f9ff137'
+            '8d9212c4bf301fc9fd0d3bce8e7cc9c2699ede767355b18fed20a5d8df3482ca'
+            '7166d5286c7e491044b17bf4b4d5672884260fd4598ac32162ea9c9468d22839'
+            '091145544167d36be7ecde4f3dcd2df6bba14314b639b393fd785e62d950bbb0'
+            'cb7e2c0e6c8989f6c87c4356d297c70ceae77f28ca3c3a74eedfbd4b260636b0'
+            '58afbf184da1864a500ebb8f9db7adbba0c9e243e375b49922888e0980309620'
+            'd5d32c880883b13199aa2fbbf71e5de8a88727d443096a2af87293a8f9d0c7b7'
+            '8c4bfd2f7c3ed46ee03524bf05bebeb56403173c303bc1d8e59171cc480ff300'
+            'aa8a478f8849cbe2d92e7e804a608fa13f46d8c401fd455e7c1059ae420a79da')
+
+prepare() {
+  #mv "${srcdir}/linux-${_git}" "${srcdir}/linux-${_basekernel}"
+  #mv "${srcdir}/linux-${_basekernel}-${_rc}" "${srcdir}/linux-${_basekernel}"
+  cd "${srcdir}/linux-${_basekernel}"
+
+  # add upstream patch
+  patch -p1 -i "${srcdir}/patch-${pkgver}"
+
+  # add latest fixes from stable queue, if needed
+  # http://git.kernel.org/?p=linux/kernel/git/stable/stable-queue.git
+  # enable only if you have "gen-stable-queue-patch.sh" executed before
+  #patch -Np1 -i "${srcdir}/prepatch-${_basekernel}`date +%Y%m%d`"
+
+  # add Intel patches
+  patch -p1 -i "${srcdir}/0101-i8042-decrease-debug-message-level-to-info.patch"
+  patch -p1 -i "${srcdir}/0102-init-do_mounts-recreate-dev-root.patch"
+  patch -p1 -i "${srcdir}/0103-Increase-the-ext4-default-commit-age.patch"
+  patch -p1 -i "${srcdir}/0104-silence-rapl.patch"
+  patch -p1 -i "${srcdir}/0105-pci-pme-wakeups.patch"
+  patch -p1 -i "${srcdir}/0106-ksm-wakeups.patch"
+  patch -p1 -i "${srcdir}/0107-intel_idle-tweak-cpuidle-cstates.patch"
+  patch -p1 -i "${srcdir}/0108-xattr-allow-setting-user.-attributes-on-symlinks-by-.patch"
+  patch -p1 -i "${srcdir}/0109-init_task-faster-timerslack.patch"
+  patch -p1 -i "${srcdir}/0110-fs-ext4-fsync-optimize-double-fsync-a-bunch.patch"
+  patch -p1 -i "${srcdir}/0111-overload-on-wakeup.patch"
+  patch -p1 -i "${srcdir}/0112-bootstats-add-printk-s-to-measure-boot-time-in-more-.patch"
+  patch -p1 -i "${srcdir}/0113-fix-initcall-timestamps.patch"
+  patch -p1 -i "${srcdir}/0114-smpboot-reuse-timer-calibration.patch"
+  patch -p1 -i "${srcdir}/0115-raid6-add-Kconfig-option-to-skip-raid6-benchmarking.patch"
+  patch -p1 -i "${srcdir}/0116-Initialize-ata-before-graphics.patch"
+  patch -p1 -i "${srcdir}/0117-reduce-e1000e-boot-time-by-tightening-sleep-ranges.patch"
+  patch -p1 -i "${srcdir}/0118-give-rdrand-some-credit.patch"
+  patch -p1 -i "${srcdir}/0119-e1000e-change-default-policy.patch"
+  patch -p1 -i "${srcdir}/0120-ipv4-tcp-allow-the-memory-tuning-for-tcp-to-go-a-lit.patch"
+  patch -p1 -i "${srcdir}/0121-igb-no-runtime-pm-to-fix-reboot-oops.patch"
+  patch -p1 -i "${srcdir}/0122-tweak-perfbias.patch"
+  patch -p1 -i "${srcdir}/0123-e1000e-increase-pause-and-refresh-time.patch"
+  patch -p1 -i "${srcdir}/0124-kernel-time-reduce-ntp-wakeups.patch"
+  patch -p1 -i "${srcdir}/0125-init-wait-for-partition-and-retry-scan.patch"
+  patch -p1 -i "${srcdir}/0126-print-fsync-count-for-bootchart.patch"
+  patch -p1 -i "${srcdir}/0151-mm-Export-do_madvise.patch"
+  patch -p1 -i "${srcdir}/0152-x86-kvm-Notify-host-to-release-pages.patch"
+  patch -p1 -i "${srcdir}/0153-x86-Return-memory-from-guest-to-host-kernel.patch"
+  patch -p1 -i "${srcdir}/0154-sysctl-vm-Fine-grained-cache-shrinking.patch"
+  patch -p1 -i "${srcdir}/1001-fpga-add-AAL-6.3.1.patch"
+  patch -p1 -i "${srcdir}/1002-fpga-add-AAL-to-fpga-Kconfig-and-Makefile.patch"
+
+  # add BFQ scheduler
+  sed -i -e "s|SUBLEVEL = 0|SUBLEVEL = ${_sub}|g" "${srcdir}/0001-BFQ-${_bfq}-v${pkgver}.patch"
+  patch -Np1 -i "${srcdir}/0001-BFQ-${_bfq}-v${pkgver}.patch"
+  patch -Np1 -i "${srcdir}/0002-BFQ-${_bfq}-v${pkgver}-uuid-block-merge.patch"
+
+  # create config
+  cat "${srcdir}/config" > ./.config
+
+  if [ "${_kernelname}" != "" ]; then
+    sed -i "s|CONFIG_LOCALVERSION=.*|CONFIG_LOCALVERSION=\"${_kernelname}\"|g" ./.config
+    sed -i "s|CONFIG_LOCALVERSION_AUTO=.*|CONFIG_LOCALVERSION_AUTO=n|" ./.config
+  fi
+
+  # set extraversion to pkgrel
+  sed -ri "s|^(EXTRAVERSION =).*|\1 -${pkgrel}|" Makefile
+
+  # don't run depmod on 'make install'. We'll do this ourselves in packaging
+  sed -i '2iexit 0' scripts/depmod.sh
+
+  # copy firmware
+  cp -a /usr/lib/firmware/i915 "${srcdir}/linux-${_basekernel}/firmware/"
+  cp -a "${srcdir}/intel-ucode" "${srcdir}/linux-${_basekernel}/firmware/"
+
+  # normally not needed
+  make clean
+
+  # get kernel version
+  make prepare
+
+  # load configuration
+  # Configure the kernel. Replace the line below with one of your choice.
+  #make menuconfig # CLI menu for configuration
+  #make nconfig # new CLI menu for configuration
+  #make xconfig # X-based configuration
+  #make oldconfig # using old config from previous kernel version
+  # ... or manually edit .config
+
+  # rewrite configuration
+  yes "" | make config >/dev/null
+}
+
+build() {
+  cd "${srcdir}/linux-${_basekernel}"
+
+  # build!
+  make ${MAKEFLAGS} LOCALVERSION= bzImage modules
+}
+
+package_linux-sx() {
+  pkgdesc="The ${pkgbase/linux-sx/Linux-SX} kernel and modules (optimized for Station-X)"
+  depends=('coreutils' 'linux-firmware' 'kmod' 'mkinitcpio>=0.7')
+  optdepends=('crda: to set the correct wireless channels of your country')
+  provides=("linux=${pkgver}")
+  install=${pkgname}.install
+
+  cd "${srcdir}/linux-${_basekernel}"
+
+  KARCH=x86
+
+  # get kernel version
+  _kernver="$(make LOCALVERSION= kernelrelease)"
+
+  mkdir -p "${pkgdir}"/{lib/modules,lib/firmware,boot}
+  make LOCALVERSION= INSTALL_MOD_PATH="${pkgdir}" modules_install
+  cp arch/$KARCH/boot/bzImage "${pkgdir}/boot/vmlinuz-${_basekernel}-${CARCH}"
+
+  # add kernel version
+  if [ "${CARCH}" = "x86_64" ]; then
+     echo "${pkgver}-${pkgrel}-MANJARO x64" > "${pkgdir}/boot/${pkgbase}-${CARCH}.kver"
+  else
+     echo "${pkgver}-${pkgrel}-MANJARO x32" > "${pkgdir}/boot/${pkgbase}-${CARCH}.kver"
+  fi
+
+  # set correct depmod command for install
+  sed -e "s|%BASEKERNEL%|${_basekernel}|g;s|%KERNVER%|${_kernver}|g;s|%ARCH%|${CARCH}|g" \
+  "${startdir}/${install}" > "${startdir}/${install}.pkg"
+  true && install=${install}.pkg
+
+  # install mkinitcpio preset file for kernel
+  sed "s|%PKGBASE%|${pkgbase}|g;s|%BASEKERNEL%|${_basekernel}|g;s|%ARCH%|${CARCH}|g" "${srcdir}/${pkgbase}.preset" |
+  install -D -m644 /dev/stdin "${pkgdir}/etc/mkinitcpio.d/${pkgbase}.preset"
+
+  # install pacman hook for initramfs regeneration
+  sed "s|%PKGBASE%|${pkgbase}|g;s|%BASEKERNEL%|${_basekernel}|g;s|%ARCH%|${CARCH}|g" "${srcdir}/${pkgbase}.hook" |
+  install -D -m644 /dev/stdin "${pkgdir}/usr/share/libalpm/hooks/98-${pkgbase}.hook"
+
+  # remove build and source links
+  rm -f "${pkgdir}"/lib/modules/${_kernver}/{source,build}
+  # remove the firmware
+  rm -rf "${pkgdir}/lib/firmware"
+  # gzip -9 all modules to save 100MB of space
+  find "${pkgdir}" -name '*.ko' -exec gzip -9 {} \;
+  # make room for external modules
+  ln -s "../extramodules-${_basekernel}${_kernelname:--MANJARO}" "${pkgdir}/lib/modules/${_kernver}/extramodules"
+  # add real version for building modules and running depmod from post_install/upgrade
+  mkdir -p "${pkgdir}/lib/modules/extramodules-${_basekernel}${_kernelname:--MANJARO}"
+  echo "${_kernver}" > "${pkgdir}/lib/modules/extramodules-${_basekernel}${_kernelname:--MANJARO}/version"
+
+  # Now we call depmod...
+  depmod -b "${pkgdir}" -F System.map "${_kernver}"
+
+  # move module tree /lib -> /usr/lib
+  mkdir -p "${pkgdir}/usr"
+  mv "${pkgdir}/lib" "${pkgdir}/usr/"
+
+  # add vmlinux
+  install -D -m644 vmlinux "${pkgdir}/usr/lib/modules/${_kernver}/build/vmlinux" 
+}
+
+package_linux-sx-headers() {
+  pkgdesc="Header files and scripts for building modules for ${pkgbase/linux-sx/Linux-SX} kernel"
+  provides=("linux-headers=$pkgver")
+
+  install -dm755 "${pkgdir}/usr/lib/modules/${_kernver}"
+
+  cd "${srcdir}/linux-${_basekernel}"
+  install -D -m644 Makefile \
+    "${pkgdir}/usr/lib/modules/${_kernver}/build/Makefile"
+  install -D -m644 kernel/Makefile \
+    "${pkgdir}/usr/lib/modules/${_kernver}/build/kernel/Makefile"
+  install -D -m644 .config \
+    "${pkgdir}/usr/lib/modules/${_kernver}/build/.config"
+
+  mkdir -p "${pkgdir}/usr/lib/modules/${_kernver}/build/include"
+
+  for i in acpi asm-generic config crypto drm generated keys linux math-emu \
+    media net pcmcia scsi sound trace uapi video xen; do
+    cp -a include/${i} "${pkgdir}/usr/lib/modules/${_kernver}/build/include/"
+  done
+
+  # copy arch includes for external modules
+  mkdir -p "${pkgdir}/usr/lib/modules/${_kernver}/build/arch/x86"
+  cp -a arch/x86/include "${pkgdir}/usr/lib/modules/${_kernver}/build/arch/x86/"
+
+  # copy files necessary for later builds, like nvidia and vmware
+  cp Module.symvers "${pkgdir}/usr/lib/modules/${_kernver}/build"
+  cp -a scripts "${pkgdir}/usr/lib/modules/${_kernver}/build"
+
+  # fix permissions on scripts dir
+  chmod og-w -R "${pkgdir}/usr/lib/modules/${_kernver}/build/scripts"
+  mkdir -p "${pkgdir}/usr/lib/modules/${_kernver}/build/.tmp_versions"
+
+  mkdir -p "${pkgdir}/usr/lib/modules/${_kernver}/build/arch/${KARCH}/kernel"
+
+  cp arch/${KARCH}/Makefile "${pkgdir}/usr/lib/modules/${_kernver}/build/arch/${KARCH}/"
+
+  if [ "${CARCH}" = "i686" ]; then
+    cp arch/${KARCH}/Makefile_32.cpu "${pkgdir}/usr/lib/modules/${_kernver}/build/arch/${KARCH}/"
+  fi
+
+  cp arch/${KARCH}/kernel/asm-offsets.s "${pkgdir}/usr/lib/modules/${_kernver}/build/arch/${KARCH}/kernel/"
+
+  # add docbook makefile
+  install -D -m644 Documentation/DocBook/Makefile \
+    "${pkgdir}/usr/lib/modules/${_kernver}/build/Documentation/DocBook/Makefile"
+
+  # add dm headers
+  mkdir -p "${pkgdir}/usr/lib/modules/${_kernver}/build/drivers/md"
+  cp drivers/md/*.h "${pkgdir}/usr/lib/modules/${_kernver}/build/drivers/md"
+
+  # add inotify.h
+  mkdir -p "${pkgdir}/usr/lib/modules/${_kernver}/build/include/linux"
+  cp include/linux/inotify.h "${pkgdir}/usr/lib/modules/${_kernver}/build/include/linux/"
+
+  # add wireless headers
+  mkdir -p "${pkgdir}/usr/lib/modules/${_kernver}/build/net/mac80211/"
+  cp net/mac80211/*.h "${pkgdir}/usr/lib/modules/${_kernver}/build/net/mac80211/"
+
+  # add xfs and shmem for aufs building
+  mkdir -p "${pkgdir}/usr/lib/modules/${_kernver}/build/fs/xfs/libxfs"
+  mkdir -p "${pkgdir}/usr/lib/modules/${_kernver}/build/mm"
+  cp fs/xfs/libxfs/xfs_sb.h "${pkgdir}/usr/lib/modules/${_kernver}/build/fs/xfs/libxfs/xfs_sb.h"
+
+  # copy in Kconfig files
+  for i in $(find . -name "Kconfig*"); do
+    mkdir -p "${pkgdir}"/usr/lib/modules/${_kernver}/build/`echo ${i} | sed 's|/Kconfig.*||'`
+    cp ${i} "${pkgdir}/usr/lib/modules/${_kernver}/build/${i}"
+  done
+
+  # add objtool for external module building and enabled VALIDATION_STACK option
+  if [ -f tools/objtool/objtool ]; then
+    mkdir -p "${pkgdir}/usr/lib/modules/${_kernver}/build/tools/objtool"
+    cp -a tools/objtool/objtool ${pkgdir}/usr/lib/modules/${_kernver}/build/tools/objtool/
+  fi
+
+  chown -R root.root "${pkgdir}/usr/lib/modules/${_kernver}/build"
+  find "${pkgdir}/usr/lib/modules/${_kernver}/build" -type d -exec chmod 755 {} \;
+
+  # strip scripts directory
+  find "${pkgdir}/usr/lib/modules/${_kernver}/build/scripts" -type f -perm -u+w 2>/dev/null | while read binary ; do
+    case "$(file -bi "${binary}")" in
+      *application/x-sharedlib*) # Libraries (.so)
+        /usr/bin/strip ${STRIP_SHARED} "${binary}";;
+      *application/x-archive*) # Libraries (.a)
+        /usr/bin/strip ${STRIP_STATIC} "${binary}";;
+      *application/x-executable*) # Binaries
+        /usr/bin/strip ${STRIP_BINARIES} "${binary}";;
+    esac
+  done
+
+  # remove unneeded architectures
+  rm -rf "${pkgdir}"/usr/lib/modules/${_kernver}/build/arch/{alpha,arc,arm,arm26,arm64,avr32,blackfin,c6x,cris,frv,h8300,hexagon,ia64,m32r,m68k,m68knommu,metag,mips,microblaze,mn10300,openrisc,parisc,powerpc,ppc,s390,score,sh,sh64,sparc,sparc64,tile,unicore32,um,v850,xtensa}
+
+  # remove a files already in linux-docs package
+  rm -f "${pkgdir}/usr/lib/modules/${_kernver}/build/Documentation/kbuild/Kconfig.recursion-issue-01"
+  rm -f "${pkgdir}/usr/lib/modules/${_kernver}/build/Documentation/kbuild/Kconfig.recursion-issue-02"
+  rm -f "${pkgdir}/usr/lib/modules/${_kernver}/build/Documentation/kbuild/Kconfig.select-break"
+}
