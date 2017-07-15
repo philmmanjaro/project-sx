@@ -16,7 +16,7 @@ _sub=2
 _ver=20170707
 _dlid=26925
 pkgver=${_basekernel}.${_sub}
-pkgrel=1.${_date}
+pkgrel=2.${_date}
 arch=('x86_64')
 url="http://www.kernel.org/"
 license=('GPL2')
@@ -80,7 +80,7 @@ sha256sums=('a45c3becd4d08ce411c14628a949d08e2433d8cdeca92036c7013980e93858ab'
             '4fd44769bf52a7ac11e90651a307aa6e56ca6e1a814e50d750ba8207973bee93'
             '9c2ba7ed904c29a9b99063d4546bf315605af8bd1f49cf3bf66f2dc0ee9fc330'
             '73d5cdcc878efdc47c6411c9043497df57389424614a73eebc82775ab5f247a2'
-            '5016e07c4afa91866566f6812aa7a4c69537d3abf64076c0307863f45a491e77'
+            '63cdaeefb197e9c78fd7fa0d563af9645c9aaef2175b2ceb65763953139f28dd'
             'b7e7811768cb8c5f02dd18ae9f311c79623f6b89fb2467db1954c5f7e328bd5c'
             '37c9f788ab7bfe91171bd678138befc2691f8ab68e17bd921215d17b38f2836a'
             '2c01c187d46f76979d94f2082805d577e510d94d5c132fb5dd305aa8b8663e65'
