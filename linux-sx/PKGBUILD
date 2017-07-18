@@ -10,7 +10,7 @@ pkgname=('linux-sx' 'linux-sx-headers')
 _kernelname=-MANJARO-SX
 _basekernel=4.12
 _basever=412
-_date=170716
+_date=170718
 _bfq=v8r12
 _sub=2
 _ver=20170707
@@ -78,7 +78,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v4.x/linux-${_basekernel}.tar.x
 sha256sums=('a45c3becd4d08ce411c14628a949d08e2433d8cdeca92036c7013980e93858ab'
             '8447d28c88834bac75653a0370a6f30615688db4756b953720e9b024537e34ac'
             '4fd44769bf52a7ac11e90651a307aa6e56ca6e1a814e50d750ba8207973bee93'
-            'd92f8d6989a5ae04681da3e46105f62066db573473d74950e6cf93cd242e0227'
+            '20a2a7c8883f7795a1389c5a05c106eedaf30a76248b49dd768292fd9dc4fdd1'
             '73d5cdcc878efdc47c6411c9043497df57389424614a73eebc82775ab5f247a2'
             '63cdaeefb197e9c78fd7fa0d563af9645c9aaef2175b2ceb65763953139f28dd'
             'b7e7811768cb8c5f02dd18ae9f311c79623f6b89fb2467db1954c5f7e328bd5c'

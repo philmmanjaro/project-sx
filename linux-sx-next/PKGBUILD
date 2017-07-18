@@ -10,12 +10,13 @@ pkgname=('linux-sx-next' 'linux-sx-next-headers')
 _kernelname=-MANJARO-SX
 _basekernel=4.13
 _basever=413
-_date=170716
+_date=170718
 _bfq=v8r12
 _rc=rc1
 _sub=0
 _ver=20170707
 _dlid=26925
+_git=cb8c65ccff7f77d0285f1b126c72d37b2572c865
 pkgver=${_basekernel}.${_sub}
 pkgrel=1.${_date}
 arch=('x86_64')
@@ -24,9 +25,9 @@ license=('GPL2')
 makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'elfutils' 'linux-firmware')
 options=('!strip')
 source=(#"https://www.kernel.org/pub/linux/kernel/v4.x/linux-${_basekernel}.tar.xz"
-        "https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz"
+        #"https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz"
         #https://github.com/torvalds/linux/archive/v${_basekernel}.tar.gz
-        #linux-${_basekernel}${_rc}-${pkgrel}.tar.gz::https://github.com/torvalds/linux/archive/${_git}.tar.gz
+        linux-${_basekernel}${_rc}-${pkgrel}.tar.gz::https://github.com/torvalds/linux/archive/${_git}.tar.gz
         #"http://www.kernel.org/pub/linux/kernel/v4.x/patch-${pkgver}.xz"
         "https://downloadmirror.intel.com/${_dlid}/eng/microcode-${_ver}.tgz"
         # the main kernel config files
@@ -75,9 +76,9 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v4.x/linux-${_basekernel}.tar.
         # ARCH Patches
         # MANJARO Patches
 )
-sha256sums=('d5346f9a52adde7f98e408e445e734fa29cc734914fc6cfd99db8c21eef4abdd'
+sha256sums=('1b46c17c391cb3f19ee3a9b374df0018d4817f9b6bd5b9595c1dfeb5d882d2d6'
             '4fd44769bf52a7ac11e90651a307aa6e56ca6e1a814e50d750ba8207973bee93'
-            '696146af8cb72d330cbc104d441bc15ced3e4808e128acc7d3a8f1ffaaf2645c'
+            '7f144857d5b620f1d9a61c9028ce42e4c761921866b31ad376c915c5b4152cc3'
             '73d5cdcc878efdc47c6411c9043497df57389424614a73eebc82775ab5f247a2'
             '63cdaeefb197e9c78fd7fa0d563af9645c9aaef2175b2ceb65763953139f28dd'
             'b7e7811768cb8c5f02dd18ae9f311c79623f6b89fb2467db1954c5f7e328bd5c'
@@ -115,8 +116,8 @@ sha256sums=('d5346f9a52adde7f98e408e445e734fa29cc734914fc6cfd99db8c21eef4abdd'
             'aa8a478f8849cbe2d92e7e804a608fa13f46d8c401fd455e7c1059ae420a79da')
 
 prepare() {
-  #mv "${srcdir}/linux-${_git}" "${srcdir}/linux-${_basekernel}"
-  mv "${srcdir}/linux-${_basekernel}-${_rc}" "${srcdir}/linux-${_basekernel}"
+  mv "${srcdir}/linux-${_git}" "${srcdir}/linux-${_basekernel}"
+  #mv "${srcdir}/linux-${_basekernel}-${_rc}" "${srcdir}/linux-${_basekernel}"
   cd "${srcdir}/linux-${_basekernel}"
 
   # add upstream patch
