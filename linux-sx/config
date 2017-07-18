@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 4.12.2-3.170716 Kernel Configuration
+# Linux/x86 4.12.2-1.170718 Kernel Configuration
 #
 CONFIG_64BIT=y
 CONFIG_X86_64=y
@@ -1645,13 +1645,13 @@ CONFIG_HAVE_IDE=y
 #
 # SCSI device support
 #
-CONFIG_SCSI_MOD=y
-CONFIG_RAID_ATTRS=y
-CONFIG_SCSI=y
+CONFIG_SCSI_MOD=m
+CONFIG_RAID_ATTRS=m
+CONFIG_SCSI=m
 CONFIG_SCSI_DMA=y
 CONFIG_SCSI_NETLINK=y
 CONFIG_SCSI_MQ_DEFAULT=y
-# CONFIG_SCSI_PROC_FS is not set
+CONFIG_SCSI_PROC_FS=y
 
 #
 # SCSI support type (disk, tape, CD-ROM)
@@ -3503,14 +3503,14 @@ CONFIG_HID_SENSOR_HUB=m
 #
 # USB HID support
 #
-CONFIG_USB_HID=y
+CONFIG_USB_HID=m
 CONFIG_HID_PID=y
 CONFIG_USB_HIDDEV=y
 
 #
 # I2C HID support
 #
-CONFIG_I2C_HID=y
+CONFIG_I2C_HID=m
 
 #
 # Intel ISH HID support
