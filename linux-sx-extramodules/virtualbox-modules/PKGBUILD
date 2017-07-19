@@ -1,0 +1,87 @@
+# Based on the file created for Arch Linux by:
+# Ionut Biru <ibiru@archlinux.org>
+# Sébastien Luttringer <seblu@aur.archlinux.org>
+
+# Maintainer: Philip Müller <philm@manjaro.org>
+# Maintainer: Bernhard Landauer <oberon@manjaro.org>
+
+_linuxprefix=linux-sx
+_extramodules=extramodules-4.12-MANJARO-SX
+pkgbase=$_linuxprefix-virtualbox-modules
+pkgname=("$_linuxprefix-virtualbox-host-modules" "$_linuxprefix-virtualbox-guest-modules")
+pkgver=5.1.24
+_pkgver="${pkgver}_OSE"
+pkgrel=1
+arch=('i686' 'x86_64')
+url='http://virtualbox.org'
+license=('GPL')
+depends=("$_linuxprefix")
+groups=("$_linuxprefix-extramodules")
+
+makedepends=("virtualbox-host-dkms>=$pkgver"
+             "virtualbox-guest-dkms>=$pkgver"
+             'dkms'
+             "$_linuxprefix" "$_linuxprefix-headers")
+
+prepare() {
+  _kernver="$(cat /usr/lib/modules/$_extramodules/version)"
+  # dkms need modification to be run as user
+  cp -r /var/lib/dkms .
+  echo "dkms_tree='$srcdir/dkms'" > dkms.conf
+}
+
+build() {
+  _kernver="$(cat /usr/lib/modules/$_extramodules/version)"
+  # build host modules
+  msg2 'Host modules'
+  dkms --dkmsframework dkms.conf build "vboxhost/$_pkgver" -k "$_kernver"
+  # build guest modules  
+  msg2 'Guest modules'
+  dkms --dkmsframework dkms.conf build "vboxguest/$_pkgver" -k "$_kernver"
+}
+
+package_linux412-virtualbox-host-modules(){
+  pkgdesc='Host kernel modules for VirtualBox'
+  replaces=("$_linuxprefix-virtualbox-modules")
+  conflicts=("$_linuxprefix-virtualbox-modules")
+  provides=('VIRTUALBOX-HOST-MODULES')
+  install=virtualbox-host-modules.install
+
+  _kernver="$(cat /usr/lib/modules/$_extramodules/version)"
+
+  install -dm755 "$pkgdir/usr/lib/modules/$_extramodules"
+  cd "dkms/vboxhost/$_pkgver/$_kernver/$CARCH/module"
+  install -m644 * "$pkgdir/usr/lib/modules/$_extramodules"
+  find "$pkgdir" -name '*.ko' -exec gzip -9 {} +
+  sed -i -e "s/EXTRAMODULES='.*'/EXTRAMODULES='$_extramodules'/" "$startdir/virtualbox-host-modules.install"
+
+  mkdir -p "$pkgdir/etc/modules-load.d"
+  echo "vboxdrv" > "$pkgdir/etc/modules-load.d/$_linuxprefix-virtualbox-host-modules.conf"
+  echo "vboxnetadp" >> "$pkgdir/etc/modules-load.d/$_linuxprefix-virtualbox-host-modules.conf"
+  echo "vboxnetflt" >> "$pkgdir/etc/modules-load.d/$_linuxprefix-virtualbox-host-modules.conf"
+  echo "vboxpci" >> "$pkgdir/etc/modules-load.d/$_linuxprefix-virtualbox-host-modules.conf"
+}
+
+package_linux412-virtualbox-guest-modules(){
+  pkgdesc='Guest kernel modules for VirtualBox'
+  replaces=("$_linuxprefix-virtualbox-manjaro-modules")
+  conflicts=("$_linuxprefix-virtualbox-manjaro-modules")
+  provides=('VIRTUALBOX-GUEST-MODULES')
+  install=virtualbox-guest-modules.install
+
+  _kernver="$(cat /usr/lib/modules/$_extramodules/version)"
+
+  install -dm755 "$pkgdir/usr/lib/modules/$_extramodules"
+  cd "dkms/vboxguest/$_pkgver/$_kernver/$CARCH/module"
+  install -m644 * "$pkgdir/usr/lib/modules/$_extramodules"
+  find "$pkgdir" -name '*.ko' -exec gzip -9 {} +
+  sed -i -e "s/EXTRAMODULES='.*'/EXTRAMODULES='$_extramodules'/" "$startdir/virtualbox-guest-modules.install"
+
+  mkdir -p "$pkgdir/etc/modules-load.d"
+  echo "vboxguest" > "$pkgdir/etc/modules-load.d/$_linuxprefix-virtualbox-guest-modules.conf"
+  echo "vboxsf" >> "$pkgdir/etc/modules-load.d/$_linuxprefix-virtualbox-guest-modules.conf"
+  echo "vboxvideo" >> "$pkgdir/etc/modules-load.d/$_linuxprefix-virtualbox-guest-modules.conf"
+}
+
+# vim:set ts=2 sw=2 et:
+
