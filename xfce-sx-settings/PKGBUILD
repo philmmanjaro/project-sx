@@ -15,7 +15,7 @@ depends=('manjaro-sx-wallpapers'
 	'qt5ct'
 	'qt5-styleplugins'
 	'vibrancy-colors'
-	'vertex-maia-themes'
+	'adapta-maia-theme'
 	'xcursor-breeze')
 conflicts=('manjaro-desktop-settings')
 provides=('manjaro-desktop-settings')
