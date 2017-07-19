@@ -40,7 +40,7 @@ build() {
   dkms --dkmsframework dkms.conf build "vboxguest/$_pkgver" -k "$_kernver"
 }
 
-package_linux412-virtualbox-host-modules(){
+package_linux-sx-next-virtualbox-host-modules(){
   pkgdesc='Host kernel modules for VirtualBox'
   replaces=("$_linuxprefix-virtualbox-modules")
   conflicts=("$_linuxprefix-virtualbox-modules")
@@ -62,7 +62,7 @@ package_linux412-virtualbox-host-modules(){
   echo "vboxpci" >> "$pkgdir/etc/modules-load.d/$_linuxprefix-virtualbox-host-modules.conf"
 }
 
-package_linux412-virtualbox-guest-modules(){
+package_linux-sx-next-virtualbox-guest-modules(){
   pkgdesc='Guest kernel modules for VirtualBox'
   replaces=("$_linuxprefix-virtualbox-manjaro-modules")
   conflicts=("$_linuxprefix-virtualbox-manjaro-modules")
