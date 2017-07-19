@@ -181,12 +181,9 @@ pavucontrol
 >extra manjaro-wallpapers-17.0
 gnome-icon-theme
 gnome-themes-standard
-gtk-theme-breath
-xcursor-simpleandsoft
-xcursor-vanilla-dmz-aa
-vibrancy-colors
-manjaro-sx-wallpapers
-manjaro-sx-icons
+>extra gtk-theme-breath
+>extra xcursor-simpleandsoft
+>extra xcursor-vanilla-dmz-aa
 
 ## Applications
 >extra catfish

@@ -1,0 +1,35 @@
+# Maintainer: Bernhard Landauer <oberon@manjaro.org>
+
+pkgname=xfce-sx-settings
+pkgver=20170719
+pkgrel=1
+pkgdesc="Manjaro SX Xfce settings"
+arch=('any')
+_repo=project-sx
+_commit=208c341a38d3c90f8cb9153cfefddbef348d0884
+url="https://github.com/philmmanjaro/$_repo"
+license=('GPL3')
+depends=('manjaro-sx-wallpapers'
+	'manjaro-base-skel'
+	'manjaro-sx-icons'
+	'qt5ct'
+	'qt5-styleplugins'
+	'vibrancy-colors'
+	'vertex-maia-themes'
+	'xcursor-breeze')
+conflicts=('manjaro-desktop-settings')
+provides=('manjaro-desktop-settings')
+source=("$url/archive/$_commit.tar.gz")
+md5sums=('3499afa15562f60c47294f35cc3ebf76')
+
+pkgver() {
+	date +%Y%m%d
+}
+
+package() {
+	cd $_repo-$_commit/$pkgname
+	install -d $pkgdir/etc
+	cp -r skel $pkgdir/etc
+	install -d $pkgdir/usr/share/glib-2.0/schemas
+	cp schemas/* $pkgdir/usr/share/glib-2.0/schemas
+}
