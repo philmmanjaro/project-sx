@@ -1,0 +1,49 @@
+# Maintainer: Bernhard Landauer <oberon@manjaro.org>
+
+pkgname=manjaro-sx-icons
+pkgver=20170719
+pkgrel=1
+_repo=project-sx
+_commit=c97d3b870b4c38744b14050a633923ab72b5bf2c
+pkgdesc='Manjaro SX icons'
+arch=('any')
+url="https://github.com/philmmanjaro/$_repo"
+licence=GPL
+conflicts=('manjaro-icons')
+provides=('manjaro-icons')
+source=("$url/archive/$_commit.tar.gz")
+md5sums=('3c1c053597d5d3a22a865fb7e5a57f23')
+
+pkgver() {
+  date +%Y%m%d
+}
+
+package() {
+  cd $_repo-$_commit/$pkgname
+  install -dm755 $pkgdir/usr/share/icons/manjaro
+  cp -r green $pkgdir/usr/share/icons/manjaro
+  cp -r maia $pkgdir/usr/share/icons/manjaro
+  cp whiskermenu-manjaro.svg $pkgdir/usr/share/icons
+
+  install -dm755 $pkgdir/usr/share/icons/hicolor/16x16/apps
+  install -dm755 $pkgdir/usr/share/icons/hicolor/22x22/apps
+  install -dm755 $pkgdir/usr/share/icons/hicolor/24x24/apps
+  install -dm755 $pkgdir/usr/share/icons/hicolor/32x32/apps
+  install -dm755 $pkgdir/usr/share/icons/hicolor/48x48/apps
+  install -dm755 $pkgdir/usr/share/icons/hicolor/64x64/apps
+  install -dm755 $pkgdir/usr/share/icons/hicolor/96x96/apps
+  install -dm755 $pkgdir/usr/share/icons/hicolor/128x128/apps
+  install -dm755 $pkgdir/usr/share/icons/hicolor/scalable/apps
+  
+  cd $pkgdir/usr/share/icons/hicolor
+  src=/usr/share/icons/manjaro/maia
+  ln -s $src/16x16.png 16x16/apps/manjaro.png
+  ln -s $src/22x22.png 22x22/apps/manjaro.png
+  ln -s $src/24x24.png 24x24/apps/manjaro.png
+  ln -s $src/32x32.png 32x32/apps/manjaro.png
+  ln -s $src/48x48.png 48x48/apps/manjaro.png
+  ln -s $src/64x64.png 64x64/apps/manjaro.png
+  ln -s $src/96x96.png 96x96/apps/manjaro.png
+  ln -s $src/128x128.png 128x128/apps/manjaro.png
+  ln -s $src/maia.svg scalable/apps/manjaro.svg
+}
