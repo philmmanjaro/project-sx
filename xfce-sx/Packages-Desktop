@@ -261,3 +261,5 @@ xdg-su
 
 ## Misc
 manjaro-hotfixes
+lm_sensors
+thermald
