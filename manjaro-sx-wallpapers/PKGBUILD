@@ -7,10 +7,10 @@ pkgdesc="Wallpapers for Manjaro SX"
 arch=('any')
 license=('GPL3')
 _repo=project-sx
-_commit=c97d3b870b4c38744b14050a633923ab72b5bf2c
+_commit=252d2c19649d7ed3a233b53519df30c05f3121fc
 url="https://github.com/philmmanjaro/$_repo"
 source=("$url/archive/$_commit.tar.gz")
-md5sums=('3c1c053597d5d3a22a865fb7e5a57f23')
+md5sums=('023ab2a2002d4b8f9034ed94e5ffb9a0')
 
 pkgver() {
     date +%Y%m%d
