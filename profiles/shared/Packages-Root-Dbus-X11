@@ -1,0 +1,112 @@
+acpi
+b43-fwcutter
+bash
+btrfs-progs
+bzip2
+coreutils
+crda
+dhclient
+diffutils
+dmraid
+dnsmasq
+dosfstools
+e2fsprogs
+ecryptfs-utils
+>x86_64 efibootmgr
+exfat-utils
+f2fs-tools
+file
+filesystem
+findutils
+gawk
+gcc-libs
+>multilib gcc-libs-multilib
+gettext
+glibc
+grep
+grub
+gzip
+inetutils
+intel-ucode
+iproute2
+iptables
+iputils
+ipw2100-fw
+ipw2200-fw
+jfsutils
+KERNEL
+less
+licenses
+linux-firmware
+logrotate
+lsb-release
+man-db
+manjaro-firmware
+>manjaro manjaro-release
+manjaro-system
+man-pages
+memtest86+
+mhwd
+mhwd-db
+mkinitcpio-openswap
+nano
+ntfs-3g
+>openrc acpid-openrc
+>openrc cpupower-openrc
+>openrc cronie-openrc
+>openrc cryptsetup-openrc
+>openrc dbus-openrc
+>openrc dbus-elogind
+>openrc device-mapper-openrc
+>openrc dhcpcd-openrc
+>openrc eudev-systemd
+>openrc haveged-openrc
+>openrc libeudev-systemd
+>openrc lvm2-openrc
+>openrc mdadm-openrc
+>openrc netifrc
+>openrc nfs-utils-openrc
+>openrc rsync-openrc
+>openrc wpa_supplicant-openrc
+>openrc libusb-nosystemd
+>openrc mkinitcpio-nosystemd
+os-prober
+pacman
+pciutils
+>systemd pcmciautils
+>openrc pcmciautils-nosystemd
+perl
+>systemd procps-ng
+>openrc procps-ng-elogind
+psmisc
+reiserfsprogs
+sed
+shadow
+s-nail
+>sonar sonar-release
+sudo
+sysfsutils
+>systemd acpid
+>systemd cpupower
+>systemd cronie
+>systemd cryptsetup
+>systemd dbus-x11
+>systemd device-mapper
+>systemd dhcpcd
+>systemd haveged
+>systemd lvm2
+>systemd mdadm
+>systemd nfs-utils
+>systemd rsync
+>systemd systemd-sysvcompat
+>systemd tlp
+>systemd wpa_supplicant
+tar
+texinfo
+usbutils
+>systemd util-linux
+>openrc util-linux-nosystemd
+which
+xfsprogs
+zd1211-firmware
+zsh
