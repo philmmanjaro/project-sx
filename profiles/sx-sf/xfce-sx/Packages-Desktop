@@ -113,21 +113,21 @@ lightdm-gtk-greeter-settings
 accountsservice  # Enhanced user accounts handling
 
 ## XFCE Group
-exo
-garcon
-gtk-xfce-engine
-thunar
+exo-gtk3
+garcon-gtk3
+gtk3-xfce-engine
+thunar-gtk3
 thunar-volman
 tumbler
-xfce4-appfinder
-xfce4-panel
-xfce4-power-manager
-xfce4-session
-xfce4-settings
+xfce4-appfinder-gtk3
+xfce4-panel-gtk3
+xfce4-power-manager-gtk3
+xfce4-session-gtk3
+xfce4-settings-gtk3
 xfce4-terminal
-xfconf
-xfdesktop
-xfwm4
+xfconf-gtk3
+xfdesktop-gtk3
+xfwm4-gtk3
 xfwm4-themes
 
 ## XFCE Extras
@@ -172,7 +172,7 @@ xfce4-taskmanager
 >extra xfce4-verve-plugin
 >extra xfce4-wavelan-plugin
 >extra xfce4-weather-plugin
-xfce4-whiskermenu-plugin
+xfce4-whiskermenu-plugin-gtk3
 xfce4-xkb-plugin
 pa-applet
 pavucontrol
@@ -185,6 +185,7 @@ gnome-themes-standard
 >extra xcursor-simpleandsoft
 >extra xcursor-vanilla-dmz-aa
 adapta-breath-theme
+vertex-maia-themes
 
 ## Applications
 >extra catfish
@@ -263,4 +264,3 @@ xdg-su
 manjaro-hotfixes
 lm_sensors
 thermald
-laptop-mode-tools
