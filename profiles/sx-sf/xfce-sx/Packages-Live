@@ -1,8 +1,1 @@
-calamares
-manjaro-live-skel
-mkinitcpio-nfs-utils
-nbd
-grub-theme-live-manjaro
-# sx-calamares-branding
-squashfs-tools
-manjaro-live-systemd
+../../shared/Packages-Live

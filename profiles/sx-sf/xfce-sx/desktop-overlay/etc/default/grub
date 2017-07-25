@@ -2,7 +2,7 @@
 GRUB_DEFAULT=saved
 GRUB_TIMEOUT=0
 GRUB_DISTRIBUTOR='Manjaro'
-GRUB_CMDLINE_LINUX_DEFAULT="quiet resume=UUID=8b1979be-7b67-4bbf-8cfc-e94651981b5c"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet"
 GRUB_CMDLINE_LINUX=""
 
 # If you want to enable the save default function, uncomment the following
