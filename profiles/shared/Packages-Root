@@ -99,7 +99,6 @@ sysfsutils
 >systemd nfs-utils
 >systemd rsync
 >systemd systemd-sysvcompat
->systemd tlp
 >systemd wpa_supplicant
 tar
 texinfo
