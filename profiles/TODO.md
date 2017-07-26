@@ -10,6 +10,7 @@
 - [ ] write a basic guide for **SX-SF** and explain its hardware and basic functions
 - [ ] start benchmarking MJR-SX Edition against other common OSs
 - [ ] test/introduce CAL OEM mode
+- [ ] try to make all special keys work (touchpad, flightmode, screenshot)
 
 ## [sx-lc][xfce-sx]
 - [ ] figure out on how to use prime best to switch gfx cards
