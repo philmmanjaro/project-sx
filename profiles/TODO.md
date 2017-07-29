@@ -11,6 +11,8 @@
 - [ ] start benchmarking MJR-SX Edition against other common OSs
 - [ ] test/introduce CAL OEM mode
 - [ ] try to make all special keys work (touchpad, flightmode, screenshot)
+- [ ] color calibration ?
+- [ ] font tuning
 
 ## [sx-lc][xfce-sx]
 - [ ] figure out on how to use prime best to switch gfx cards
