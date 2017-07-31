@@ -29,7 +29,7 @@ libdvdcss
 manjaro-pulse
 pulseaudio-bluetooth
 pulseaudio-ctl
-pulseaudio-equalizer
+pulseaudio-equalizer-ladspa
 pulseaudio-zeroconf
 
 ## Connect Packages
