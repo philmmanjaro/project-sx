@@ -1,7 +1,7 @@
 # Maintainer: Bernhard Landauer <oberon@manjaro.org>
 
 pkgname=xfce-sx-settings
-pkgver=20170726
+pkgver=20170731
 pkgrel=1
 pkgdesc="Manjaro SX Xfce settings"
 arch=('any')
@@ -27,7 +27,7 @@ pkgver() {
 }
 
 package() {
-	cd $_repo-$_commit/$pkgname
+	cd $_repo-$_commit/settings/$pkgname
 	install -d $pkgdir/etc
 	cp -r skel $pkgdir/etc
 	install -d $pkgdir/usr/share/glib-2.0/schemas
