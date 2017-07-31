@@ -22,7 +22,7 @@
 
 ### Automatically restore the volume of streams and devices
 load-module module-device-restore
-load-module module-stream-restore
+load-module module-stream-restore restore_device=false
 load-module module-card-restore
 
 ### Automatically augment property information from .desktop files
@@ -142,3 +142,10 @@ load-module module-filter-apply
 ### Load the integrated PulseAudio equalizer and D-Bus module
 load-module module-equalizer-sink
 load-module module-dbus-protocol
+### BEGIN: Equalized audio configuration
+### Generated from: pulseaudio-equalizer
+load-module module-ladspa-sink sink_name=ladspa_output.mbeq_1197.mbeq master=alsa_output.pci-0000_00_1f.3.analog-stereo plugin=mbeq_1197 label=mbeq control=5.0,7.6,10.3,13.1,14.7,14.3,12.1,8.9,6.0,8.9,11.4,13.3,9.0,3.4,-4.8
+set-default-sink ladspa_output.mbeq_1197.mbeq
+set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 65536
+set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo 0
+### END: Equalized audio configuration
