@@ -13,6 +13,7 @@
 - [ ] try to make all special keys work (touchpad, flightmode, screenshot)
 - [ ] color calibration ?
 - [ ] font tuning
+- [ ] 50% of volume is enough. Setup it properly
 
 ## [sx-lc][xfce-sx]
 - [ ] figure out on how to use prime best to switch gfx cards
