@@ -140,7 +140,9 @@ load-module module-filter-apply
 #set-default-source input
 
 ### Load the integrated PulseAudio equalizer and D-Bus module
+.ifexists module-equalizer-sink.so
 load-module module-equalizer-sink
+.endif
 load-module module-dbus-protocol
 ### BEGIN: Equalized audio configuration
 ### Generated from: pulseaudio-equalizer
