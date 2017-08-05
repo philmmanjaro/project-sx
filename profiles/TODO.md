@@ -14,6 +14,7 @@
 - [ ] color calibration ?
 - [ ] font tuning
 - [ ] 50% of volume is enough. Setup it properly
+- [ ] check why cpu scaling is broken with **v4.13** series
 
 ## [sx-lc][xfce-sx]
 - [ ] figure out on how to use prime best to switch gfx cards
