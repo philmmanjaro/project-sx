@@ -267,3 +267,6 @@ manjaro-hotfixes
 lm_sensors
 thermald
 laptop-mode-tools
+indicator-sensors
+indicator-powersave
+hdparm
