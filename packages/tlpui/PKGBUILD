@@ -3,7 +3,7 @@
 
 pkgname=tlpui
 pkgver=r44.9ee96d0
-pkgrel=1
+pkgrel=2
 pkgdesc="GTK user interface for TLP"
 arch=('any')
 url="https://github.com/d4nj1/TLPUI"
@@ -30,10 +30,8 @@ package() {
   mv "${pkgdir}"/opt/tlpui/LICENSE.md "${pkgdir}"/usr/share/licenses/tlpui/LICENSE.md
   rm "${pkgdir}"/opt/tlpui/*.md
   rm "${pkgdir}"/opt/tlpui/*.png
-  mkdir -p "${pkgdir}"/usr/bin
-  cp -a "${srcdir}"/tlpui "${pkgdir}"/usr/bin/tlpui
-  mkdir -p "${pkgdir}"/usr/share/applications
-  cp -a "${srcdir}"/tlpui.desktop "${pkgdir}"/usr/share/applications/tlpui.desktop
+  install -Dm755 "${srcdir}"/tlpui "${pkgdir}"/usr/bin/tlpui
+  install -Dm644 "${srcdir}"/tlpui.desktop "${pkgdir}"/usr/share/applications/tlpui.desktop
   sed -i -e "s|'lang/'|'/opt/tlpui/lang/'|g" "${pkgdir}"/opt/tlpui/*.py
   sed -i -e "s|'icons/|'/opt/tlpui/icons/|g" "${pkgdir}"/opt/tlpui/*.py
   sed -i -e "s|'styles.css'|'/opt/tlpui/styles.css'|g" "${pkgdir}"/opt/tlpui/css.py
