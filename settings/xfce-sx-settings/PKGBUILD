@@ -2,7 +2,7 @@
 
 pkgname=xfce-sx-settings
 pkgver=20170806
-pkgrel=3
+pkgrel=4
 pkgdesc="Manjaro SX Xfce settings"
 arch=('any')
 _repo=project-sx
@@ -17,17 +17,18 @@ depends=('manjaro-sx-wallpapers'
 	'vibrancy-colors'
 	'adapta-maia-theme'
 	'xcursor-breeze')
+makedepends=('git')
 conflicts=('manjaro-desktop-settings')
 provides=('manjaro-desktop-settings')
-source=("$url/archive/$_commit.tar.gz")
-md5sums=('12f27098e4faa25b2c83fa0404208fd6')
+source=("git+$url.git")
+md5sums=('SKIP')
 
 pkgver() {
 	date +%Y%m%d
 }
 
 package() {
-	cd $_repo-$_commit/settings/$pkgname
+	cd $_repo/settings/$pkgname
 	install -d $pkgdir/etc
 	cp -r skel $pkgdir/etc
 	install -d $pkgdir/usr/share/glib-2.0/schemas
