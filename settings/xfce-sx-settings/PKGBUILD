@@ -2,11 +2,11 @@
 
 pkgname=xfce-sx-settings
 pkgver=20170806
-pkgrel=2
+pkgrel=3
 pkgdesc="Manjaro SX Xfce settings"
 arch=('any')
 _repo=project-sx
-_commit=1973f37c93d1d50ed7d2cb872a927f8164779e09
+_commit=60c2e8c49d6b1f055640938c68614703bb11c775
 url="https://github.com/philmmanjaro/$_repo"
 license=('GPL3')
 depends=('manjaro-sx-wallpapers'
@@ -20,7 +20,7 @@ depends=('manjaro-sx-wallpapers'
 conflicts=('manjaro-desktop-settings')
 provides=('manjaro-desktop-settings')
 source=("$url/archive/$_commit.tar.gz")
-md5sums=('876adcbe8976e1e7884a47d567a8faee')
+md5sums=('12f27098e4faa25b2c83fa0404208fd6')
 
 pkgver() {
 	date +%Y%m%d
