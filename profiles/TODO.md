@@ -1,6 +1,7 @@
 ## [sx-sf][xfce-sx]
 
 - [ ] configure **laptop-mode-tools** ([#4](https://github.com/philmmanjaro/project-sx/issues/4))
+- [ ] as alternative we may configure **tlp** via **tlpui** and provide a sane default file for **tlp**
 - [ ] only add drivers for our specific models (consider **mhwd** just for kernel config)
 - [ ] test suspend/resume in several situations
 - [ ] decide which kernel we should use (currently **linux411**)
