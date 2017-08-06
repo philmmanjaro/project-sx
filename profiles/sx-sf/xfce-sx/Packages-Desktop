@@ -265,7 +265,12 @@ xdg-su
 manjaro-hotfixes
 lm_sensors
 thermald
-laptop-mode-tools
+#laptop-mode-tools
+tlpui
+tp_smapi
+#x86_energy_perf_policy
+ethtool
+smartmontools
 indicator-sensors
 indicator-powersave
 hdparm
