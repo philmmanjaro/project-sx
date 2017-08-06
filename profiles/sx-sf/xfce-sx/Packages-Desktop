@@ -13,7 +13,6 @@ modemmanager
 openresolv
 openssh
 samba
-#KERNEL-r8168
 
 ## Libraries for Sound/Audio/Video
 alsa-firmware
