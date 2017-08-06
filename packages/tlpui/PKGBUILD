@@ -1,0 +1,41 @@
+# Maintainer: Philip Müller <philm@manjaro.org>
+# Maintainer: Lisa McCoy <lisa@manjaro.org>
+
+pkgname=tlpui
+pkgver=r44.9ee96d0
+pkgrel=1
+pkgdesc="GTK user interface for TLP"
+arch=('any')
+url="https://github.com/d4nj1/TLPUI"
+license=('GPL')
+depends=('tlp' 'python' 'gksu')
+makedepends=('git')
+source=("TLPUI"::"git+$url.git"
+        "tlpui" "tlpui.desktop")
+sha512sums=('SKIP'
+            'df3082a5a12a1573c1001f0137d062a9c49a8a29fcce14d6bcc32aba7983c3e28a5952ee5d301181e54fb931475385ce92de0ce0f3ea1db03c702624cccafa40'
+            '52903265a2229b5eea6d4e6107b1b2e76ab99422574d907f05577115f5f7bcecb298a3b04b59b203fd0400de5d5110b8e12c780d7135e52cca40a3fafc771f85')
+
+pkgver() {
+  cd "${srcdir}/TLPUI"
+
+  printf "r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
+}
+
+package() {
+  cd "${srcdir}/TLPUI"
+  mkdir -p "${pkgdir}"/opt/tlpui
+  cp -v -a "${srcdir}/"TLPUI/* "${pkgdir}"/opt/tlpui
+  mkdir -p "${pkgdir}"/usr/share/licenses/tlpui
+  mv "${pkgdir}"/opt/tlpui/LICENSE.md "${pkgdir}"/usr/share/licenses/tlpui/LICENSE.md
+  rm "${pkgdir}"/opt/tlpui/*.md
+  rm "${pkgdir}"/opt/tlpui/*.png
+  mkdir -p "${pkgdir}"/usr/bin
+  cp -a "${srcdir}"/tlpui "${pkgdir}"/usr/bin/tlpui
+  mkdir -p "${pkgdir}"/usr/share/applications
+  cp -a "${srcdir}"/tlpui.desktop "${pkgdir}"/usr/share/applications/tlpui.desktop
+  sed -i -e "s|'lang/'|'/opt/tlpui/lang/'|g" "${pkgdir}"/opt/tlpui/*.py
+  sed -i -e "s|'icons/|'/opt/tlpui/icons/|g" "${pkgdir}"/opt/tlpui/*.py
+  sed -i -e "s|'styles.css'|'/opt/tlpui/styles.css'|g" "${pkgdir}"/opt/tlpui/css.py
+  sed -i -e "s|'configschema.json'|'/opt/tlpui/configschema.json'|g" "${pkgdir}"/opt/tlpui/file.py
+}
