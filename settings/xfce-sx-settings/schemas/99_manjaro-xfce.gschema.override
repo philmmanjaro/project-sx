@@ -1,2 +1,5 @@
+[indicator-sensors.manager]
+enabled-sensors=['libsensors/acpitz-virtual-0/0', 'libsensors/coretemp-isa-0000/0', 'libsensors/coretemp-isa-0000/4', 'libsensors/coretemp-isa-0000/8', 'libsensors/iwlwifi-virtual-0/0', 'libsensors/pch_skylake-virtual-0/0', 'virtual/dynamic', 'virtual/max']
+
 [org.xfce.mousepad.preferences.view]
 color-scheme='classic'
