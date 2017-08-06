@@ -267,7 +267,7 @@ lm_sensors
 thermald
 #laptop-mode-tools
 tlpui
-tp_smapi
+KERNEL-tp_smapi
 #x86_energy_perf_policy
 ethtool
 smartmontools
