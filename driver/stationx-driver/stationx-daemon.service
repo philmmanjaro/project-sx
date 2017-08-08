@@ -1,0 +1,10 @@
+[Unit]
+Description=StationX airplane-mode hotkey and LED support
+
+[Service]
+ExecStart=/usr/lib/stationx/stationx-daemon
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+

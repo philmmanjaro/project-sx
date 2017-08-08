@@ -1,11 +1,11 @@
 # Maintainer: Philip Müller <philm@manjaro.org>
 
 pkgname=clevo-indicator
-pkgver=r19.67facb8
-pkgrel=0.2
+pkgver=r35.3161af7
+pkgrel=1
 pkgdesc="Clevo Fan Control Indicator."
 arch=('i686' 'x86_64')
-url="https://github.com/SkyLandTW/clevo-indicator"
+url="https://github.com/philmmanjaro/clevo-indicator"
 license=('GPL')
 depends=('libappindicator-gtk3')
 makedepends=('git')
@@ -17,11 +17,11 @@ pkgver() {
   echo "r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
 }
 
-prepare() {
-  # THIS IS LOW-LEVEL AND MAKE BURN THE CPU !!!
-  sed -i -e 's|val < 40|val < 5|g' "${srcdir}"/clevo-indicator/src/clevo-indicator.c
-  sed -i -e 's|duty_percentage < 60|duty_percentage < 5|g' "${srcdir}"/clevo-indicator/src/clevo-indicator.c
-}
+#prepare() {
+#  # THIS IS LOW-LEVEL AND MAKE BURN THE CPU !!!
+#  sed -i -e 's|val < 40|val < 5|g' "${srcdir}"/clevo-indicator/src/clevo-indicator.c
+#  sed -i -e 's|duty_percentage < 60|duty_percentage < 5|g' "${srcdir}"/clevo-indicator/src/clevo-indicator.c
+#}
 
 build() {
   cd ${srcdir}/clevo-indicator
