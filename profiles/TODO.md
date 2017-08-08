@@ -20,6 +20,7 @@
 - [ ] include custom wallpapers (landscapes and abstract)
 - [ ] check why cpu scaling is broken with **v4.13** series
 - [ ] use [hdparm](https://wiki.archlinux.org/index.php/hdparm) to automatically spin down normal HDDs when not needed
+- [ ] preconfigure hibernation
 
 ## [sx-lc][xfce-sx]
 - [ ] figure out on how to use prime best to switch gfx cards
