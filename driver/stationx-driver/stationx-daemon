@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # stationx-driver: Universal driver for StationX computers
 # Copyright (C) 2017 StationX, Ltd.
 # Copyright (C) 2005-2016 System76, Inc.
