@@ -1,0 +1,38 @@
+# Maintainer: Philip Müller <philm@manjaro.org>
+
+pkgname=stationx-driver
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Universal driver for StationX computers"
+arch=('any')
+url="project-sx"
+license=('GPL')
+depends=('python>=3.6' 'python-gobject' 'python-dbus' 'python-evdev' 'dmidecode')
+optdepends=(
+	'pm-utils: For powermanagement features'
+	'pulseaudio: To apply microphone fix')
+_repo=project-sx
+_commit=106372681a71f7a10087a13af2ed1f38b824a9dc
+url="https://github.com/philmmanjaro/$_repo"
+source=("git+$url.git")
+md5sums=('SKIP')
+
+package() {
+	cd $_repo/driver/$pkgname
+
+	################
+	# installation #
+	################
+	install -m755 -D stationx-daemon ${pkgdir}/usr/lib/stationx/stationx-daemon
+	python setup.py install --prefix=/usr --root=${pkgdir} --optimize=1
+	install -m644 -D ${startdir}/stationx-daemon.service ${pkgdir}/usr/lib/systemd/system/stationx-daemon.service
+	# creating /var/lib/stationx-driver directory for brightness settings saving
+	install -m755 -d ${pkgdir}/var/lib/stationx-driver 
+	
+	cd ${pkgdir}
+
+	###########
+	# cleanup #
+	###########
+	rm -rf ${pkgdir}/usr/lib/python*/site-packages/stationxdriver/{__pycache__,tests}
+} 
