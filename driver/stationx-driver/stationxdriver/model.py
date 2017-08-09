@@ -60,16 +60,13 @@ ALL_KEYWORDS = (
 
 TABLES = {
     'system-uuid': {
-        '00000000-0000-0000-0000-000000000001': 'koap1',
+        '465BFA80-4B09-0000-0000-000000000000': 'sx-sf',
     },
     'baseboard-product-name': {
         'N130BU': 'sx-sf',
     },
     'system-product-name': {
         'N130BU': 'sx-sf',
-    },
-    'system-version': {
-        'sx-sf': 'sx-sf',
     },
 }
 
