@@ -34,7 +34,6 @@ from distutils.core import setup
 from distutils.cmd import Command
 
 import stationxdriver
-from stationxdriver.tests.run import run_tests
 
 def run_pyflakes3():
     pyflakes3 = '/usr/bin/pyflakes3'
@@ -62,7 +61,6 @@ setup(
     license='GPLv2+',
     packages=[
         'stationxdriver',
-        'stationxdriver.tests'
     ],
     package_data={
         'stationxdriver': ['data/*'],
