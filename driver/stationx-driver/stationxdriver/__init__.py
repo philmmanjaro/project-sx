@@ -43,7 +43,7 @@ def get_datafile(name):
 
 
 def read_dmi_id(key, sysdir='/sys'):
-    if key not in ('sys_vendor', 'product_version'):
+    if key not in ('sys_vendor', 'product_name'):
         raise ValueError('bad dmi/id key: {!r}'.format(key))
     filename = path.join(sysdir, 'class', 'dmi', 'id', key)
     try:
@@ -60,7 +60,7 @@ def get_sys_vendor(sysdir='/sys'):
     log.warning('invalid sys_vendor: %r', sys_vendor)
 
 
-def get_product_version(sysdir='/sys'):
+def get_product_name(sysdir='/sys'):
     if get_sys_vendor(sysdir) is not None:
-        return read_dmi_id('product_version', sysdir)
+        return read_dmi_id('product_name', sysdir)
 

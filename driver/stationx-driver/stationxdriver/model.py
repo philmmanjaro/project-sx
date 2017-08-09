@@ -103,8 +103,8 @@ def determine_model(info=None):
 
 
 def determine_model_new(sysdir='/sys', info=None):
-    model = read_dmi_id('product_version', sysdir)
-    if model in TABLES['system-version']:
+    model = read_dmi_id('product_name', sysdir)
+    if model in TABLES['system-product-name']:
         return model
     return determine_model(info)
 

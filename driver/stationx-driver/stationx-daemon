@@ -57,7 +57,7 @@ log.info('**** Process start at monotonic time %r', start_time)
 
 if not args.model:
     model = daemon.load_json_conf('/etc/stationx-daemon.json').get('model')
-    args.model = (model or stationxdriver.get_product_version())
+    args.model = (model or stationxdriver.get_product_name())
 log.info('model: %r', args.model)
 brightness = daemon.run_brightness(args.model)
 airplane = daemon.run_airplane(args.model)

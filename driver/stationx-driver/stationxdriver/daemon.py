@@ -55,7 +55,7 @@ MASK2 = 0b10111111
 
 # Products in this frozenset need the airplane mode hack
 NEEDS_AIRPLANE = frozenset([
-    'sx-sf',
+    'N130BU',
 ])
 
 # These products use 'acpi_video0' instead of 'intel_backlight':
