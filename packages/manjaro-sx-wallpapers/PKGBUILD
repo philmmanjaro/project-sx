@@ -1,23 +1,23 @@
 # Maintainer: Bernhard Landauer <oberon@manjaro.org>
 
 pkgname=manjaro-sx-wallpapers
-pkgver=20170720
+pkgver=20170809
 pkgrel=1
 pkgdesc="Wallpapers for Manjaro SX"
 arch=('any')
 license=('GPL3')
 _repo=project-sx
-_commit=252d2c19649d7ed3a233b53519df30c05f3121fc
+makedepends=('git')
 url="https://github.com/philmmanjaro/$_repo"
-source=("$url/archive/$_commit.tar.gz")
-md5sums=('023ab2a2002d4b8f9034ed94e5ffb9a0')
+source=("git+$url.git")
+md5sums=('SKIP')
 
 pkgver() {
     date +%Y%m%d
 }
 
 package() {
-    cd $_repo-$_commit/$pkgname
+    cd $_repo/packages/$pkgname
     install -dm755 $pkgdir/usr/share
-    cp -r * $pkgdir/usr/share
+    cp -r backgrounds $pkgdir/usr/share
 }
