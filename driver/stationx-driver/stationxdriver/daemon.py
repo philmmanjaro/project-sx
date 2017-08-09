@@ -1,20 +1,21 @@
-# system76-driver: Universal driver for System76 computers
+# stationx-driver: Universal driver for StationX computers
+# Copyright (C) 2017 StationX, Ltd.
 # Copyright (C) 2005-2016 System76, Inc.
 #
-# This file is part of `system76-driver`.
+# This file is part of `stationx-driver`.
 #
-# `system76-driver` is free software; you can redistribute it and/or modify
+# `stationx-driver` is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
-# `system76-driver` is distributed in the hope that it will be useful,
+# `stationx-driver` is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License along
-# with `system76-driver`; if not, write to the Free Software Foundation, Inc.,
+# with `stationx-driver`; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 """
@@ -54,87 +55,27 @@ MASK2 = 0b10111111
 
 # Products in this frozenset need the airplane mode hack
 NEEDS_AIRPLANE = frozenset([
-    'bonx7',
-    'bonx8',
-    'bonw9',
-    'bonw10',
-    'bonw11',
-    'bonw12',
-    'daru4',
-    'galu1',
-    'galp2',
-    'gazp9',
-    'gazp9b',
-    'gazp9c',
-    'gaze10',
-    'gaze11',
-    'gaze12',
-    'kudp1',
-    'kudp1b',
-    'kudp1c',
-    'kudu2',
-    'kudu3',
-    'kudu4',
-    'serw9',
-    'serw10',
-    'lemu6',
-    'lemu7',
-    'orxp1',
-    'oryp2',
-    'oryp2-ess',
-    'oryp3',
-    'oryp3-ess',
+    'sx-sf',
 ])
 
 # These products use 'acpi_video0' instead of 'intel_backlight':
 NEEDS_BRIGHTNESS_ACPI = (
-    'bonx7',
-    'bonx8',
-    'bonw9',
-    'bonw10',
-    'serw8-15',
-    'serw8-17',
-    'serw8-17g',
-    'serw9',
-    'orxp1',
+    'sx-none',
 )
 
 # These products need software-base brightness restore:
 NEEDS_BRIGHTNESS = NEEDS_BRIGHTNESS_ACPI + (
-    'daru4',
-    'galu1',
-    'gazp9',
-    'gazp9b',
-    'gazp9c',
-    'gaze10',
-    'kudp1',
-    'kudp1b',
-    'kudp1c',
-    'kudu2',
-    'lemu5',
-    'sabc1',
-    'sabc2',
-    'sabc3',
-    'sabl4',
-    'sabt1',
-    'sabt2',
-    'sabt3',
-    'lemu6',
+    'sx-none',
 )
 
 # These Products need an acpi interrupt override:
 NEEDS_FIRMWARE_ACPI_INTERRUPTS_GPE6F = (
-    'oryp2',
-    'oryp2-ess',
+    'sx-none',
 )
 
 # These Products need ess dac switch
 NEEDS_ESS_DAC_AUTOSWITCH = (
-    'bonw11',
-    'bonw12',
-    'oryp2-ess',
-    'oryp3-ess',
-    'serw10',
+    'sx-none',
 )
 
 def load_json_conf(filename):
