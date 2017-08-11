@@ -267,7 +267,6 @@ lm_sensors
 thermald
 powertop
 tlpui
-KERNEL-tp_smapi
 #x86_energy_perf_policy
 ethtool
 smartmontools
