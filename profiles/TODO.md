@@ -11,7 +11,7 @@
 - [ ] check why cpu scaling is broken with **v4.13** series
 - [ ] work on modified **sx-kernels**, if they improve battery life
 - [x] adopt to **XFCE-GTK3**
-- [ ] start benchmarking MJR-SX Edition against other common OSs
+- [ ] check if we can optimize fan control
 - [ ] test/introduce CAL OEM mode
 - [x] try to make all special keys work (touchpad, flightmode, screenshot)
 - [ ] color calibration ?
@@ -22,6 +22,7 @@
 - [ ] use [hdparm](https://wiki.archlinux.org/index.php/hdparm) to automatically spin down normal HDDs when not needed
 - [ ] update user guide for SX usage
 - [ ] write a basic guide for **SX-SF** and explain its hardware and basic functions
+- [ ] start benchmarking MJR-SX Edition against other common OSs
 
 ## [sx-lc][xfce-sx]
 - [ ] figure out on how to use prime best to switch gfx cards
