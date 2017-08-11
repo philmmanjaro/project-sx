@@ -245,7 +245,6 @@ xf86-input-keyboard
 xf86-input-libinput
 xf86-input-mouse
 xf86-input-void
-touchpad-indicator
 
 ## Xorg Server and Graphics
 xdg-user-dirs
