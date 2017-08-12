@@ -22,6 +22,13 @@ from libcalamares.utils import target_env_call
 
 
 class CleanupOem:
+    def __init__(self):
+        self.__root = libcalamares.globalstorage.value("rootMountPoint")
+
+    @property
+    def root(self):
+        return self.__root
+
     def remove_pkg(self, pkg, path):
         if exists(join(self.root, path)):
             target_env_call(['pacman', '-Rsn', '--noconfirm', pkg])
