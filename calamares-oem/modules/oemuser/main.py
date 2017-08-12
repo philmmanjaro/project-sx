@@ -27,19 +27,9 @@ from libcalamares.utils import target_env_call
 
 class ConfigOem:
     def __init__(self):
-        self.__root = libcalamares.globalstorage.value("rootMountPoint")
-        self.__groups = "video,audio,power,disk,storage,optical,network,lp,scanner,wheel,autologin"
-        libcalamares.globalstorage.insert("autologinGroup", "autologin")
+        self.__groups = 'video,audio,power,disk,storage,optical,network,lp,scanner,wheel,autologin'
         libcalamares.globalstorage.insert("autologinUser", "oem")
-        libcalamares.globalstorage.insert("hostname", "oem-pc")
-        libcalamares.globalstorage.insert("password", "oem")
-        libcalamares.globalstorage.insert("setRootPassword", "true")
-        libcalamares.globalstorage.insert("sudoersGroup", "wheel")
         libcalamares.globalstorage.insert("username", "oem")
-
-    @property
-    def root(self):
-        return self.__root
 
     @property
     def groups(self):
@@ -63,9 +53,10 @@ class ConfigOem:
         return True
 
     def run(self):
+        target_env_call(['groupadd', 'autologin'])
         target_env_call(['useradd', '-m', '-s', '/bin/bash', '-U', '-G', self.groups, 'oem'])
         self.change_user_password('oem', 'oem')
-        target_env_call(['echo', "oem ALL=(ALL) NOPASSWD: ALL", '>', '/etc/sudoers.d/g_oem' ])
+        target_env_call(['echo', '"oem ALL=(ALL) NOPASSWD: ALL"', '>', '/etc/sudoers.d/g_oem' ])
 
         return None
 
