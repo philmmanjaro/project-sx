@@ -3,6 +3,7 @@
 - [x] configure **laptop-mode-tools** ([#4](https://github.com/philmmanjaro/project-sx/issues/4))
 - [x] as alternative we may configure **tlp** via **tlpui** and provide a sane default file for **tlp**
 - [ ] fine-tune xfce4-power-manager settings
+- [ ] use powertop to detect parts wasting battery life and tweak it
 - [ ] preconfigure hibernation
 - [x] only add drivers for our specific models (consider **mhwd** just for kernel config)
 - [x] test suspend/resume in several situations
@@ -12,8 +13,8 @@
 - [ ] check why cpu scaling is broken with **v4.13** series
 - [ ] work on modified **sx-kernels**, if they improve battery life
 - [x] adopt to **XFCE-GTK3**
-- [ ] check if we can optimize fan control
-- [ ] test/introduce CAL OEM mode
+- [ ] check if we can optimize fan control even further
+- [x] test/introduce CAL OEM mode
 - [x] try to make all special keys work (touchpad, flightmode, screenshot)
 - [ ] color calibration ?
 - [ ] font tuning
