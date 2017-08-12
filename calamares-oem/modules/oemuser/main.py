@@ -20,6 +20,7 @@
 
 import libcalamares
 
+import os
 import logging
 import crypt
 from libcalamares.utils import target_env_call
@@ -27,9 +28,14 @@ from libcalamares.utils import target_env_call
 
 class ConfigOem:
     def __init__(self):
+        self.__root = libcalamares.globalstorage.value("rootMountPoint")
         self.__groups = 'video,audio,power,disk,storage,optical,network,lp,scanner,wheel,autologin'
         libcalamares.globalstorage.insert("autologinUser", "oem")
         libcalamares.globalstorage.insert("username", "oem")
+
+    @property
+    def root(self):
+        return self.__root
 
     @property
     def groups(self):
@@ -54,9 +60,15 @@ class ConfigOem:
 
     def run(self):
         target_env_call(['groupadd', 'autologin'])
+        target_env_call(['mv', '/etc/skel', '/etc/skel_'])
+        target_env_call(['mv', '/etc/oemskel', '/etc/skel'])
         target_env_call(['useradd', '-m', '-s', '/bin/bash', '-U', '-G', self.groups, 'oem'])
+        target_env_call(['mv', '/etc/skel', '/etc/oemskel'])
+        target_env_call(['mv', '/etc/skel_', '/etc/skel'])
         self.change_user_password('oem', 'oem')
-        target_env_call(['echo', '"oem ALL=(ALL) NOPASSWD: ALL"', '>', '/etc/sudoers.d/g_oem' ])
+        path = os.path.join(self.root, "etc/sudoers.d/g_oem")
+        with open(path, "w") as oem_file:
+            oem_file.write("oem ALL=(ALL) NOPASSWD: ALL")
 
         return None
 
