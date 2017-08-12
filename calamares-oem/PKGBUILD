@@ -1,0 +1,39 @@
+# Maintainer: Philip Müller <philm@manjaro.org>
+# Maintainer: Bernhard Landauer <oberon@manjaro.org>
+
+pkgbase=calamares-oem
+pkgname=("calamares-oem-modules" "calamares-oem-sx-settings")
+pkgver=20170812
+pkgrel=1
+arch=('any')
+_repo=project-sx
+_commit=5351cd1f6e53a1aadca34cc7da1af97e6467b69c
+url="https://github.com/philmmanjaro/$_repo"
+license=('GPL3')
+makedepends=('git')
+source=("git+$url.git")
+md5sums=('SKIP')
+
+pkgver() {
+	date +%Y%m%d
+}
+
+package_calamares-oem-modules() {
+	pkgdesc="Manjaro OEM Modules"
+	depends=('calamares' 'calamares-oem-settings')
+	cd "${_repo}/${pkgbase}"
+	install -d "${pkgdir}"/usr/lib/calamares
+	cp -r modules "${pkgdir}"/usr/lib/calamares
+	install -Dm644 postinstall-settings/settings.conf "${pkgdir}"/etc/calamares/settings.conf
+	install -Dm644 postinstall-settings/removeuser.conf "${pkgdir}"/etc/calamares/modules/removeuser.conf
+	install -Dm644 postinstall-settings/welcome.conf "${pkgdir}"/etc/calamares/modules/welcome.conf
+	install -Dm644 postinstall-settings/users.conf "${pkgdir}"/etc/calamares/modules/users.conf
+}
+
+package_calamares-oem-sx-settings() {
+	pkgdesc="Manjaro OEM SX-Settings"
+	provides=('calamares-oem-settings')
+	cd "${_repo}/${pkgbase}"
+	install -d "${pkgdir}"/etc
+	cp -r oemskel "${pkgdir}"/etc
+}
