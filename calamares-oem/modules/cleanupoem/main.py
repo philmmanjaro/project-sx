@@ -19,6 +19,7 @@
 #   along with Calamares. If not, see <http://www.gnu.org/licenses/>.
 
 from libcalamares.utils import target_env_call
+from os.path import exists
 
 
 class CleanupOem:
