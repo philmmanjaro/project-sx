@@ -274,3 +274,6 @@ stationx-driver
 indicator-sensors
 indicator-powersave
 hdparm
+
+## OEM
+calamares

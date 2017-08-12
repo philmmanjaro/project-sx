@@ -1,4 +1,4 @@
-calamares
+#calamares
 manjaro-live-skel
 mkinitcpio-nfs-utils
 nbd
@@ -8,4 +8,4 @@ nbd
 >sonar sonar-calamares-branding
 squashfs-tools
 >systemd manjaro-live-systemd
->sonar thus
+#>sonar thus
