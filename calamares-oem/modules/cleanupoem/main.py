@@ -22,7 +22,7 @@ from libcalamares.utils import target_env_call
 
 
 class CleanupOem:
-    def remove_pkg(pkg, path):
+    def remove_pkg(self, pkg, path):
         if exists(path):
             target_env_call(['pacman', '-Rsn', '--noconfirm', pkg])
 
