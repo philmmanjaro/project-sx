@@ -34,6 +34,8 @@ class CleanupOem:
             target_env_call(['rm', '/etc/sudoers.d/g_oem'])
         self.remove_pkg("calamares-oem-modules", "/etc/calamares/modules/removeuser.conf")
         self.remove_pkg("calamares-oem-sx-settings", "/etc/oemskel")
+        if exists('/usr/share/calamares'):
+            target_env_call(['rm', '-R', '/usr/share/calamares'])
 
         return None
 

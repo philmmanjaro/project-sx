@@ -4,10 +4,10 @@
 pkgbase=calamares-oem
 pkgname=("calamares-oem-modules" "calamares-oem-sx-settings")
 pkgver=20170812
-pkgrel=3
+pkgrel=4
 arch=('any')
 _repo=project-sx
-_commit=9fe151370962f1a2923431e93358c045d6756bbd
+_commit=3346dca9ec4a390cbaa6b555b017b9e8a0e30547
 url="https://github.com/philmmanjaro/$_repo"
 license=('GPL3')
 makedepends=('git')
