@@ -276,4 +276,5 @@ indicator-powersave
 hdparm
 
 ## OEM
-calamares
+calamares-oem-modules
+calamares-oem-sx-settings

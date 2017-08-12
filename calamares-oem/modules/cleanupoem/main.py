@@ -22,21 +22,17 @@ from libcalamares.utils import target_env_call
 
 
 class CleanupOem:
-    def __init__(self):
-        self.__root = libcalamares.globalstorage.value("rootMountPoint")
-
-    @property
-    def root(self):
-        return self.__root
-
-    def remove_pkg(self, pkg, path):
-        if exists(join(self.root, path)):
+    def remove_pkg(pkg, path):
+        if exists(path):
             target_env_call(['pacman', '-Rsn', '--noconfirm', pkg])
 
     def run(self):
-        target_env_call(['rm', '-R', '/home/oem'])
-        self.remove_pkg("calamares-oem-modules", "etc/calamares/modules/removeuser.conf")
-        self.remove_pkg("calamares-oem-sx-settings", "etc/oemskel")
+        if exists('/home/oem'):
+            target_env_call(['rm', '-R', '/home/oem'])
+        if exists('/etc/sudoers.d/g_oem'):
+            target_env_call(['rm', '/etc/sudoers.d/g_oem'])
+        self.remove_pkg("calamares-oem-modules", "/etc/calamares/modules/removeuser.conf")
+        self.remove_pkg("calamares-oem-sx-settings", "/etc/oemskel")
 
         return None
 
