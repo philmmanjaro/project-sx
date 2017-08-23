@@ -2,7 +2,7 @@
 
 pkgname=manjaro-sx-wallpapers
 pkgver=20170809
-pkgrel=1
+pkgrel=2
 pkgdesc="Wallpapers for Manjaro SX"
 arch=('any')
 license=('GPL3')
