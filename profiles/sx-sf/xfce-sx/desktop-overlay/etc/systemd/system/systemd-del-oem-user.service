@@ -1,0 +1,16 @@
+#  This file is part of calamares-oem.
+#
+
+[Unit]
+Description=Delete OEM user
+ConditionPathExists=!/etc/oemskel
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/userdel -f -r oem
+ExecStart=/usr/bin/rm -Rf /home/oem
+ExecStart=/usr/bin/rm /etc/systemd/system/systemd-del-oem-user.service
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
