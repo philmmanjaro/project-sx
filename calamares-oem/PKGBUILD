@@ -11,8 +11,8 @@ _commit=3d6160bc82c848f8b7c037f7e79da832b352cd97
 url="https://github.com/philmmanjaro/$_repo"
 license=('GPL3')
 makedepends=('git')
-source=("git+$url.git")
-md5sums=('SKIP')
+source=("git+$url.git" 'cleanupoem.service')
+md5sums=('SKIP' '1')
 
 pkgver() {
 	date +%Y%m%d
@@ -21,12 +21,14 @@ pkgver() {
 package_calamares-oem-modules() {
 	pkgdesc="Manjaro OEM Modules"
 	depends=('calamares' 'calamares-oem-settings')
+        install=calamares-oem-modules.install
 	cd "${_repo}/${pkgbase}"
 	install -d "${pkgdir}"/usr/lib/calamares
 	cp -r modules "${pkgdir}"/usr/lib/calamares
 	install -Dm644 postinstall-settings/settings.conf "${pkgdir}"/etc/calamares/settings.conf
 	install -Dm644 postinstall-settings/welcome.conf "${pkgdir}"/etc/calamares/modules/welcome.conf
 	install -Dm644 postinstall-settings/users.conf "${pkgdir}"/etc/calamares/modules/users.conf
+	install -Dm644 cleanupoem.service "${pkgdir}"/opt/cleanupoem.service
 }
 
 package_calamares-oem-sx-settings() {
