@@ -4,10 +4,10 @@
 pkgbase=calamares-oem
 pkgname=("calamares-oem-modules" "calamares-oem-sx-settings")
 pkgver=20170826
-pkgrel=3
+pkgrel=4
 arch=('any')
 _repo=project-sx
-_commit=9923eab28faba165fa1d3b00c5c39d6699fc982e
+_commit=3d6160bc82c848f8b7c037f7e79da832b352cd97
 url="https://github.com/philmmanjaro/$_repo"
 license=('GPL3')
 makedepends=('git')
@@ -25,7 +25,6 @@ package_calamares-oem-modules() {
 	install -d "${pkgdir}"/usr/lib/calamares
 	cp -r modules "${pkgdir}"/usr/lib/calamares
 	install -Dm644 postinstall-settings/settings.conf "${pkgdir}"/etc/calamares/settings.conf
-	install -Dm644 postinstall-settings/removeuser.conf "${pkgdir}"/etc/calamares/modules/removeuser.conf
 	install -Dm644 postinstall-settings/welcome.conf "${pkgdir}"/etc/calamares/modules/welcome.conf
 	install -Dm644 postinstall-settings/users.conf "${pkgdir}"/etc/calamares/modules/users.conf
 }
