@@ -14,7 +14,8 @@
 - [ ] work on modified **sx-kernels**, if they improve battery life
 - [x] adopt to **XFCE-GTK3**
 - [ ] check if we can optimize fan control even further
-- [x] test/introduce CAL OEM mode
+- [x] test/introduce CAL OEM modes
+- [x] optimize CAL OEM modes
 - [x] try to make all special keys work (touchpad, flightmode, screenshot)
 - [ ] color calibration ?
 - [ ] font tuning
