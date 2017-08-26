@@ -81,9 +81,12 @@ def modify_grub_default(partitions, root_mount_point, distributor):
     kernel_params = ["quiet"]
 
     """
-    StationX modification for SX-SF extra buttons
+    StationX modification for SX-SF extra buttons and silent boot
     """
-    kernel_params.append("acpi_osi= acpi_os_name=Linux")
+    kernel_params.append(
+        "vga=current vt.global_cursor_default=0 loglevel=3 rd.systemd.show_status=auto \
+        rd.udev.log-priority=3 acpi_osi= acpi_os_name=Linux"
+        )
 
     if cryptdevice_params:
         kernel_params.extend(cryptdevice_params)

@@ -1,12 +1,12 @@
 # Maintainer: Bernhard Landauer <oberon@manjaro.org>
 
 pkgname=xfce-sx-settings
-pkgver=20170811
+pkgver=20170824
 pkgrel=1
 pkgdesc="Manjaro SX Xfce settings"
 arch=('any')
 _repo=project-sx
-_commit=5351cd1f6e53a1aadca34cc7da1af97e6467b69c
+_commit=9ed68ddbbae2bd1a4d0e21355e346fcd97b6de0e
 url="https://github.com/philmmanjaro/$_repo"
 license=('GPL3')
 depends=('manjaro-sx-wallpapers'
