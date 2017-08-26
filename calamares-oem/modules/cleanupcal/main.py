@@ -22,19 +22,23 @@ from libcalamares.utils import target_env_call
 from os.path import exists
 
 
-class CleanupOem:
+class CleanupCAL:
+    def remove_pkg(self, pkg, path):
+        if exists(path):
+            target_env_call(['pacman', '-Rsn', '--noconfirm', pkg])
+
     def run(self):
-        if exists('/home/oem'):
-            target_env_call(['rm', '-R', '/home/oem'])
-        if exists('/etc/sudoers.d/g_oem'):
-            target_env_call(['rm', '/etc/sudoers.d/g_oem'])
+        self.remove_pkg("calamares-oem-modules", "/etc/calamares/modules/removeuser.conf")
+        self.remove_pkg("calamares-oem-sx-settings", "/etc/oemskel")
+        if exists('/usr/share/calamares'):
+            target_env_call(['rm', '-R', '/usr/share/calamares'])
 
         return None
 
 
 def run():
-    """ Cleanup OEM files """
+    """ Cleanup CAL files """
 
-    oem = CleanupOem()
+    oem = CleanupCAL()
 
     return oem.run()
