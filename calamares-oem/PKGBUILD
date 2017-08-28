@@ -3,8 +3,8 @@
 
 pkgbase=calamares-oem
 pkgname=("calamares-oem-modules" "calamares-oem-sx-settings")
-pkgver=20170826
-pkgrel=5
+pkgver=20170828
+pkgrel=1
 arch=('any')
 _repo=project-sx
 _commit=3d6160bc82c848f8b7c037f7e79da832b352cd97
@@ -13,7 +13,7 @@ license=('GPL3')
 makedepends=('git')
 source=("git+$url.git" 'cleanupoem.service')
 md5sums=('SKIP'
-         'a8a043b38d0df18df2263d30e659a34c')
+         '89410e5af734c7585b58530cba9d9685')
 
 pkgver() {
 	date +%Y%m%d

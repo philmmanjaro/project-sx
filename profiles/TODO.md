@@ -8,9 +8,9 @@
 - [x] only add drivers for our specific models (consider **mhwd** just for kernel config)
 - [x] test suspend/resume in several situations
 - [x] enable kernel.sysrq
-- [ ] decide which kernel we should use (currently **linux411**)
-- [ ] check why hibernate and sleep is broken with **v4.12** series
-- [ ] check why cpu scaling is broken with **v4.13** series
+- [x] decide which kernel we should use (currently **linux413**)
+- [x] check why hibernate and sleep is broken with **v4.12+** series
+- [x] check why cpu scaling is broken with **v4.13** series
 - [ ] work on modified **sx-kernels**, if they improve battery life
 - [x] adopt to **XFCE-GTK3**
 - [ ] check if we can optimize fan control even further

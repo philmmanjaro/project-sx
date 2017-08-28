@@ -255,7 +255,6 @@ mesa-demos
 xorg-twm
 xorg-xinit
 xorg-xkill
-xf86-video-vesa # only needed so VB works
 
 ## Desktop Utils
 perl-file-mimeinfo
