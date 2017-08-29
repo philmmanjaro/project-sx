@@ -11,8 +11,8 @@ license=('GPL3')
 provides=('indicator-sensors-git')
 conflicts=('indicator-sensors-git')
 depends=('dconf' 'libappindicator-gtk3' 'libatasmart' 'libnotify' 'libpeas' 'lm_sensors' 'sensor-icons' 'udisks2')
+makedepends=('git' 'gnome-common' 'gobject-introspection' 'intltool')
 optdepends=('libxnvctrl: NVIDIA GPU support')
-makedepends=('git' 'gnome-common' 'intltool')
 source=("git+https://github.com/alexmurray/indicator-sensors"
         'menu-cleanup.patch'
         'is-udisks2.rules')
