@@ -1,18 +1,18 @@
+# Maintainer: Bernhard Landauer <oberon@manjaro.org>
 # Maintainer: Que Quotion <quequotion@bugmenot.com>
 
 pkgname=indicator-sensors
 pkgver=0.8.r32.g6bfed17
-pkgrel=1
+pkgrel=2
 pkgdesc="Small application to provide hardware sensor readings using the AppIndicator framework (git version)"
 arch=('i686' 'x86_64')
 url="https://github.com/alexmurray/indicator-sensors"
 license=('GPL3')
 provides=('indicator-sensors-git')
 conflicts=('indicator-sensors-git')
-depends=('dconf' 'libappindicator-gtk3' 'libatasmart' 'libnotify' 'libpeas' 'lm_sensors' 'udisks2')
+depends=('dconf' 'libappindicator-gtk3' 'libatasmart' 'libnotify' 'libpeas' 'lm_sensors' 'sensor-icons' 'udisks2')
 optdepends=('libxnvctrl: NVIDIA GPU support')
-makedepends=('gnome-common' 'intltool' 'git')
-install=indicator-sensors.install
+makedepends=('git' 'gnome-common' 'intltool')
 source=("git+https://github.com/alexmurray/indicator-sensors"
         'menu-cleanup.patch'
         'is-udisks2.rules')
@@ -28,8 +28,8 @@ pkgver() {
 prepare() {
   cd indicator-sensors
 
-  #Cleanup indicator menu (remove "about" and "quit")
-  patch -Np2 < ../menu-cleanup.patch
+  ##Cleanup indicator menu (remove "about" and "quit")
+  #patch -Np2 < ../menu-cleanup.patch
 }
 
 build() {
@@ -44,5 +44,8 @@ package() {
   make DESTDIR="$pkgdir" install
   mkdir -p -m 750 "$pkgdir"/etc/polkit-1/rules.d/
   install -m 644 ../is-udisks2.rules "$pkgdir"/etc/polkit-1/rules.d/
+
+  #rm appicon provided provided by separate pkg
+  rm $pkgdir/usr/share/icons/hicolor/48x48/apps/indicator-sensors.png
 }
 
