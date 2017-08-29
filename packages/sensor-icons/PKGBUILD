@@ -8,6 +8,7 @@ arch=('any')
 _repo=project-sx
 url="https://github.com/philmmanjaro/$_repo"
 licence=GPL
+conflicts=('indicator-sensors-git')
 source=("git+$url.git")
 md5sums=('SKIP')
 
