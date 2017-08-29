@@ -1,0 +1,31 @@
+# Maintainer: Bernhard Landauer <oberon@manjaro.org>
+
+pkgname=sensor-icons
+pkgver=20170829
+pkgrel=1
+pkgdesc='Official Manjaro icons'
+arch=('any')
+_repo=project-sx
+url="https://github.com/philmmanjaro/$_repo"
+licence=GPL
+source=("git+$url.git")
+md5sums=('SKIP')
+
+pkgver() {
+  date +%Y%m%d
+}
+
+package() {
+  target=$pkgdir/usr/share/icons/hicolor
+  icon=apps/indicator-sensors.png
+  cd $_repo/packages/$pkgname
+  install -Dm755 16.png $target/16x16/$icon
+  install -Dm755 22.png $target/22x22/$icon
+  install -Dm755 24.png $target/24x24/$icon
+  install -Dm755 32.png $target/32x32/$icon
+  install -Dm755 48.png $target/48x48/$icon
+  install -Dm755 64.png $target/64x64/$icon
+  install -Dm755 96.png $target/96x96/$icon
+  install -Dm755 128.png $target/128x128/$icon
+  install -dm755 $target/scalable/apps/indicator-sensors.svg
+}
