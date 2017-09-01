@@ -1,7 +1,7 @@
 # Maintainer: Bernhard Landauer <oberon@manjaro.org>
 
 pkgname=sensor-icons
-pkgver=20170829
+pkgver=20170901
 pkgrel=1
 pkgdesc='Official Manjaro icons'
 arch=('any')
