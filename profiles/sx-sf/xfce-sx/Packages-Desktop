@@ -215,7 +215,7 @@ firefox
 >extra mlocate
 mousepad
 mugshot
->basic parole # media player
+>basic parole-gtk3 # media player
 >extra pidgin
 powertop
 >extra poppler-data  # CKJ support for pdf
