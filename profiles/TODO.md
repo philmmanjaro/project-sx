@@ -20,7 +20,7 @@
 - [ ] color calibration ?
 - [ ] font tuning
 - [x] include pulse-equalizer with default/alternative preset(s)
-- [ ] 50% of volume is enough. Setup it properly
+- [x] 50% of volume is enough. Setup it properly
 - [x] include custom wallpapers (landscapes and abstract)
 - [ ] use [hdparm](https://wiki.archlinux.org/index.php/hdparm) to automatically spin down normal HDDs when not needed
 - [ ] update user guide for SX usage
