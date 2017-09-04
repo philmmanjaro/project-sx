@@ -12,7 +12,7 @@ optdepends=(
 	'pm-utils: For powermanagement features'
 	'pulseaudio: To apply microphone fix')
 _repo=project-sx
-_commit=106372681a71f7a10087a13af2ed1f38b824a9dc
+_commit=4fae59ecb9356cda20f000577bc611effe1215ab
 url="https://github.com/philmmanjaro/$_repo"
 source=("git+$url.git")
 md5sums=('SKIP')
@@ -29,7 +29,7 @@ package() {
 	# creating /var/lib/stationx-driver directory for brightness settings saving
 	install -m755 -d ${pkgdir}/var/lib/stationx-driver
 	# Install recommended settings by Intel for Dirty Writeback Centisecs
-	install -Dm 755 "$srcdir/snapd.sh" "$pkgdir/etc/profile.d/opt-dirty_writeback_centisecs.sh"
+	install -Dm 755 "opt-dirty_writeback_centisecs.sh" "$pkgdir/etc/profile.d/opt-dirty_writeback_centisecs.sh"
 	
 	cd ${pkgdir}
 
