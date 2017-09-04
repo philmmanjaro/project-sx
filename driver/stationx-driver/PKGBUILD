@@ -2,7 +2,7 @@
 
 pkgname=stationx-driver
 pkgver=0.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Universal driver for StationX computers"
 arch=('any')
 url="project-sx"
@@ -27,7 +27,9 @@ package() {
 	python setup.py install --prefix=/usr --root=${pkgdir} --optimize=1
 	install -m644 -D ${startdir}/stationx-daemon.service ${pkgdir}/usr/lib/systemd/system/stationx-daemon.service
 	# creating /var/lib/stationx-driver directory for brightness settings saving
-	install -m755 -d ${pkgdir}/var/lib/stationx-driver 
+	install -m755 -d ${pkgdir}/var/lib/stationx-driver
+	# Install recommended settings by Intel for Dirty Writeback Centisecs
+	install -Dm 755 "$srcdir/snapd.sh" "$pkgdir/etc/profile.d/opt-dirty_writeback_centisecs.sh"
 	
 	cd ${pkgdir}
 

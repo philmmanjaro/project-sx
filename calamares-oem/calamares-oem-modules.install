@@ -1,6 +1,6 @@
 post_install() {
   printf '==> Enabling systemd service\n'
   printf '    \n'
-  cp /opt/cleanupoem.service /usr/lib/systemd/system
+  cp /opt/calamares/cleanupoem.service /usr/lib/systemd/system
   systemctl enable cleanupoem
 }

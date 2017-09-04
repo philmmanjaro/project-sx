@@ -29,7 +29,7 @@ package_calamares-oem-modules() {
 	install -Dm644 postinstall-settings/settings.conf "${pkgdir}"/etc/calamares/settings.conf
 	install -Dm644 postinstall-settings/welcome.conf "${pkgdir}"/etc/calamares/modules/welcome.conf
 	install -Dm644 postinstall-settings/users.conf "${pkgdir}"/etc/calamares/modules/users.conf
-	install -Dm644 cleanupoem.service "${pkgdir}"/opt/cleanupoem.service
+	install -Dm644 cleanupoem.service "${pkgdir}"/opt/calamares/cleanupoem.service
 }
 
 package_calamares-oem-sx-settings() {
