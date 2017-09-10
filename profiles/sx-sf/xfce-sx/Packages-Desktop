@@ -65,6 +65,8 @@ pkg-config
 >extra git
 >extra patchutils
 >extra subversion
+>extra yaourt
+>extra manjaro-aur-support
 
 ## Fonts
 cantarell-fonts
@@ -220,6 +222,7 @@ mugshot
 powertop
 >extra poppler-data  # CKJ support for pdf
 >basic sylpheed # mail client
+screenfetch
 >extra thunderbird
 >extra vlc-nightly
 >extra viewnior
@@ -272,7 +275,6 @@ ethtool
 smartmontools
 stationx-driver
 indicator-sensors
-indicator-powersave
 hdparm
 
 ## OEM
