@@ -85,7 +85,7 @@ terminus-font
 >extra steam-manjaro
 
 ## Package management
-pamac-dev
+pamac
 
 ## Java
 >extra jdk8-openjdk
