@@ -5,6 +5,7 @@ btrfs-progs
 bzip2
 coreutils
 crda
+dbus-x11
 dhclient
 diffutils
 dmraid
