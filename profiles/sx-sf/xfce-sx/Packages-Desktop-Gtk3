@@ -1,0 +1,286 @@
+## Network
+avahi
+networkmanager
+networkmanager-openconnect
+networkmanager-openvpn
+networkmanager-pptp
+networkmanager-vpnc
+networkmanager-dispatcher-ntpd
+nss-mdns # NSS support for mDNS (optdepend for avahi)
+ntp
+mobile-broadband-provider-info
+modemmanager
+openresolv
+openssh
+samba
+
+## Libraries for Sound/Audio/Video
+alsa-firmware
+alsa-utils
+ffmpeg
+gst-libav
+gst-plugins-bad
+gst-plugins-base
+gst-plugins-good
+gst-plugins-ugly
+libdvdcss
+>multilib manjaro-alsa
+manjaro-pulse
+pulseaudio-bluetooth
+pulseaudio-ctl
+pulseaudio-equalizer-ladspa
+pulseaudio-zeroconf
+
+## Connect Packages
+android-tools
+android-udev
+gvfs
+gvfs-afc
+gvfs-gphoto2
+gvfs-mtp
+gvfs-nfs
+gvfs-smb
+mtpfs
+udiskie
+udisks2
+
+## AUR Support/Development
+# Missing base-devel packages
+autoconf
+automake
+binutils
+bison
+fakeroot
+flex
+gcc
+>multilib gcc-libs-multilib
+>multilib gcc-multilib
+libtool
+m4
+make
+patch
+pkg-config
+>multilib lib32-flex
+# Extra packages for AUR support
+>extra git
+>extra patchutils
+>extra subversion
+>extra yaourt
+>extra manjaro-aur-support
+
+## Fonts
+cantarell-fonts
+# noto-fonts             # default font
+# noto-fonts-cjk         # big package, ~76 mb compressed
+# >extra noto-fonts-emoji
+terminus-font
+>extra ttf-bitstream-vera
+# ttf-dejavu             # Installed as gnome-themes-standard dependency
+>extra ttf-inconsolata
+>extra ttf-indic-otf
+>extra ttf-liberation
+>extra ttf-droid
+
+## Games
+>extra steam-manjaro
+
+## Package management
+pamac
+
+## Java
+>extra jdk8-openjdk
+>extra jre8-openjdk-headless
+>extra jre8-openjdk
+
+## Printing
+>extra cups
+>extra cups-pdf
+>extra cups-pk-helper
+>extra ghostscript
+>extra gsfonts
+>extra gtk3-print-backends
+>extra hplip
+>extra splix
+
+## Optional dependencies for hplip
+>extra pyqt5-common # For hplip
+>extra python-pillow # For hplip
+>extra python-pip # For hplip
+>extra python-pyqt5  # For hplip gui
+>extra python-reportlab # For hplip
+
+## Display manager
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+accountsservice  # Enhanced user accounts handling
+
+## GTK3
+gtk3-classic
+>multilib lib32-gtk3-classic
+
+## XFCE Group
+exo-gtk3
+garcon-gtk3
+gtk3-xfce-engine
+thunar-gtk3
+thunar-volman
+tumbler
+xfce4-appfinder-gtk3
+xfce4-panel-gtk3
+xfce4-power-manager-gtk3
+xfce4-session-gtk3
+xfce4-settings-gtk3
+xfce4-terminal
+xfconf-gtk3
+xfdesktop-gtk3
+xfwm4-gtk3
+xfwm4-themes
+
+## XFCE Extras
+blueman
+ffmpegthumbnailer  # tumbler - for video thumbnails
+freetype2          # tumbler - for font thumbnails
+gconf              # fix qt-theme
+gksu
+gnome-keyring      # fix wlan segfault
+libgsf             # tumbler - for ODF thumbnails
+libopenraw         # tumbler - for RAW thumbnails
+light-locker
+network-manager-applet
+menulibre
+orage
+poppler-glib       # tumbler - for PDF thumbnails
+thunar-archive-plugin
+thunar-media-tags-plugin
+# >extra xfce4-artwork
+xfce4-battery-plugin
+xfce4-clipman-plugin
+>extra xfce4-cpufreq-plugin
+>extra xfce4-cpugraph-plugin
+# xfce4-datetime-plugin
+>extra xfce4-dict
+>extra xfce4-diskperf-plugin
+>extra xfce4-fsguard-plugin
+>extra xfce4-genmon-plugin
+>extra xfce4-mailwatch-plugin
+>extra xfce4-mount-plugin
+>extra xfce4-mpc-plugin
+>extra xfce4-netload-plugin
+>extra xfce4-notes-plugin
+xfce4-notifyd-gtk3
+xfce4-screenshooter
+>extra xfce4-sensors-plugin
+>extra xfce4-smartbookmark-plugin
+>extra xfce4-systemload-plugin
+xfce4-taskmanager
+>extra xfce4-time-out-plugin
+>extra xfce4-timer-plugin
+>extra xfce4-verve-plugin
+>extra xfce4-wavelan-plugin
+>extra xfce4-weather-plugin
+xfce4-whiskermenu-plugin-gtk3
+xfce4-xkb-plugin
+pa-applet
+pavucontrol
+
+## Themes QT/GTK/SDDM
+>extra manjaro-wallpapers-17.0
+gnome-icon-theme
+gnome-themes-standard
+>extra gtk-theme-breath
+>extra xcursor-simpleandsoft
+>extra xcursor-vanilla-dmz-aa
+adapta-breath-theme
+vertex-maia-themes
+
+## Applications
+>extra catfish
+dmidecode # optional dependency inxi
+engrampa
+engrampa-thunar-plugin
+>extra firefox
+>extra ff-theme-util
+# >extra flashplugin
+>extra galculator-gtk2
+>extra gimp
+gparted
+gufw
+>extra audacious
+>extra hexchat
+htop
+qpdfview
+>extra qpdfview-djvu-plugin
+>extra qpdfview-ps-plugin
+inxi
+>extra libreoffice-still
+manjaro-hello
+manjaro-settings-manager
+manjaro-settings-manager-notifier
+firefox
+>extra mlocate
+mousepad
+mugshot
+>basic parole-gtk3 # media player
+>extra pidgin
+powertop
+>extra poppler-data  # CKJ support for pdf
+>basic sylpheed # mail client
+screenfetch
+>extra thunderbird
+>extra vlc-nightly
+>extra viewnior
+>extra xfburn
+>extra yelp
+
+# Optional dependencies engrampa
+p7zip  # 7Z and ARJ archive support
+unace  # ACE archive support
+unrar  # RAR archive support
+
+## Documentation
+manjaro-documentation-en
+
+## Settings packages
+xfce-sx-settings
+manjaro-browser-settings
+
+## Xorg Input Drivers
+xf86-input-elographics
+xf86-input-evdev
+xf86-input-keyboard
+xf86-input-libinput
+xf86-input-mouse
+xf86-input-void
+
+## Xorg Server and Graphics
+xdg-user-dirs
+xorg-server
+numlockx
+mesa-demos
+>multilib lib32-mesa-demos
+xorg-twm
+xorg-xinit
+xorg-xkill
+
+## Desktop Utils
+perl-file-mimeinfo
+xdg-utils
+xdg-su
+
+## Misc
+manjaro-hotfixes
+lm_sensors
+thermald
+powertop
+tlpui
+#x86_energy_perf_policy
+ethtool
+smartmontools
+stationx-driver
+indicator-sensors
+hdparm
+
+## OEM
+calamares-oem-modules
+calamares-oem-sx-settings
