@@ -228,7 +228,9 @@ powertop
 >basic sylpheed # mail client
 screenfetch
 >extra thunderbird
->extra vlc-nightly
+#>extra vlc-nightly
+>extra vlc
+>extra qt4
 >extra viewnior
 >extra xfburn
 >extra yelp
