@@ -1,0 +1,10 @@
+[Unit]
+Description=Local system resume actions (sda)
+After=suspend.target hybrid-sleep.target hibernate.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/hdparm -q -S 2 -y /dev/sda
+
+[Install]
+WantedBy=sleep.target

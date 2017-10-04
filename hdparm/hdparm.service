@@ -1,0 +1,10 @@
+[Unit]
+Description=hdparm sleep sda
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/hdparm -q -S 2 -y /dev/sda
+
+[Install]
+WantedBy=multi-user.target
+
