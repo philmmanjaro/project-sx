@@ -11,6 +11,7 @@
 - [x] decide which kernel we should use (currently **linux413**)
 - [x] check why hibernate and sleep is broken with **v4.12+** series
 - [x] check why cpu scaling is broken with **v4.13** series
+- [ ] fix graphical glitches with **v4.13** series and test if **v4.14** works already better
 - [ ] work on modified **sx-kernels**, if they improve battery life
 - [x] adopt to **XFCE-GTK3**
 - [x] check if we can optimize fan control even further
