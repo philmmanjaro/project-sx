@@ -1,0 +1,10 @@
+post_install() {
+  systemctl enable hdparm
+  systemctl enable hdparm-apm
+  systemctl start hdparm
+}
+
+post_remove() {
+  systemctl disable hdparm
+  systemctl disable hdparm-apm
+}
