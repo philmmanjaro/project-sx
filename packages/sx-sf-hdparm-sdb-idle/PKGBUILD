@@ -1,14 +1,16 @@
 # Maintainer: Philip Müller <philm@manjaro.org>
 
 pkgname=sx-sf-hdparm-sdb-idle
-pkgver=0.1
+pkgver=20171006
 pkgrel=1
 pkgdesc='Set SDB to idle'
 arch=('any')
 _repo=project-sx
 url="https://github.com/philmmanjaro/$_repo"
 licence=GPL
-install=("$pkgname.install")
+depends=('systemd' 'hdparm')
+makedepends=('git')
+install=$pkgname.install
 source=("git+$url.git")
 md5sums=('SKIP')
 
@@ -18,6 +20,7 @@ pkgver() {
 
 package() {
   target=$pkgdir/etc/systemd/system/
+  mkdir -p $target
   cd $_repo/packages/$pkgname
   install -Dm755 hdparm-apm.service $target
   install -Dm755 hdparm.service $target

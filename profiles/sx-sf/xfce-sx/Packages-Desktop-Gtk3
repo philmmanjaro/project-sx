@@ -282,6 +282,7 @@ smartmontools
 stationx-driver
 indicator-sensors
 hdparm
+sx-sf-hdparm-sdb-idle
 
 ## OEM
 calamares-oem-modules
