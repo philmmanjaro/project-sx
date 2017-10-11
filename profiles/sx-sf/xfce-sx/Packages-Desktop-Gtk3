@@ -122,7 +122,6 @@ gtk3-classic
 ## XFCE Group
 exo-gtk3
 garcon-gtk3
-gtk3-xfce-engine
 thunar-gtk3
 thunar-volman
 tumbler
@@ -135,7 +134,6 @@ xfce4-terminal
 xfconf-gtk3
 xfdesktop-gtk3
 xfwm4-gtk3
-xfwm4-themes
 
 ## XFCE Extras
 blueman
@@ -184,16 +182,18 @@ xfce4-xkb-plugin
 pa-applet
 pavucontrol
 
-## Themes QT/GTK/SDDM
+## Themes QT/GTK
 >extra manjaro-wallpapers-17.0
 gnome-icon-theme
 gnome-themes-standard
 >extra gtk-theme-breath
 >extra xcursor-simpleandsoft
 >extra xcursor-vanilla-dmz-aa
+>extra xfce-theme-greybird
 adapta-breath-theme
 vertex-maia-themes
 kvantum-manjaro
+xfce-gtk3-theme-greybird
 
 ## Applications
 >extra catfish
