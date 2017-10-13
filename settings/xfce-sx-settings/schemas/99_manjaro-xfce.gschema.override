@@ -1,5 +1,5 @@
 [indicator-sensors.manager]
-enabled-sensors=['libsensors/coretemp-iso-0000/4','libsensors/coretemp-iso-0000/8']
+enabled-sensors=['libsensors/coretemp-isa-0000/4','libsensors/coretemp-isa-0000/8','libsensors/coretemp-iso-0000/4','libsensors/coretemp-iso-0000/8']
 
 [org.xfce.mousepad.preferences.view]
 color-scheme='classic'
