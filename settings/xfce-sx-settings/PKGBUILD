@@ -1,7 +1,7 @@
 # Maintainer: Bernhard Landauer <oberon@manjaro.org>
 
 pkgname=xfce-sx-settings
-pkgver=20171010
+pkgver=20171013
 pkgrel=1
 pkgdesc="Manjaro SX Xfce settings"
 arch=('any')
