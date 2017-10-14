@@ -28,8 +28,7 @@
 - [ ] update user guide for SX usage
 - [ ] write a basic guide for **SX-SF** and explain its hardware and basic functions
 - [ ] start benchmarking MJR-SX Edition against other common OSs
-- [ ] add flightmode tray icon
-- [ ] ceck sensor list
+- [x] ceck sensor list
 
 ## [sx-hc][xfce-sx]
 - [ ] figure out on how to use prime best to switch gfx cards
