@@ -169,6 +169,8 @@ xfce4-clipman-plugin
 >extra xfce4-netload-plugin
 >extra xfce4-notes-plugin
 xfce4-notifyd
+xfce4-pulseaudio-plugin
+pavucontrol
 xfce4-screenshooter
 >extra xfce4-sensors-plugin
 >extra xfce4-smartbookmark-plugin
@@ -181,8 +183,6 @@ xfce4-taskmanager
 >extra xfce4-weather-plugin
 xfce4-whiskermenu-plugin
 xfce4-xkb-plugin
-pa-applet
-pavucontrol
 
 ## Themes QT/GTK/SDDM
 >extra manjaro-wallpapers-17.0
