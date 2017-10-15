@@ -211,9 +211,6 @@ gufw
 >extra audacious
 >extra hexchat
 htop
-qpdfview
->extra qpdfview-djvu-plugin
->extra qpdfview-ps-plugin
 inxi
 >extra libreoffice-still
 manjaro-hello
@@ -235,6 +232,7 @@ screenfetch
 >extra qt4
 >extra viewnior
 >extra xfburn
+xreader
 >extra yelp
 
 # Optional dependencies engrampa
