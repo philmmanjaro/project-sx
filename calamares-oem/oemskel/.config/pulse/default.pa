@@ -139,15 +139,10 @@ load-module module-filter-apply
 #set-default-sink output
 #set-default-source input
 
-### Load the integrated PulseAudio equalizer and D-Bus module
-.ifexists module-equalizer-sink.so
-load-module module-equalizer-sink
-.endif
-load-module module-dbus-protocol
 ### BEGIN: Equalized audio configuration
 ### Generated from: pulseaudio-equalizer
-load-module module-ladspa-sink sink_name=ladspa_output.mbeq_1197.mbeq master=alsa_output.pci-0000_00_1f.3.analog-stereo plugin=mbeq_1197 label=mbeq control=5.0,7.6,10.3,13.1,14.7,14.3,12.1,8.9,6.0,8.9,11.4,13.3,9.0,3.4,-4.8
+load-module module-ladspa-sink sink_name=ladspa_output.mbeq_1197.mbeq master=alsa_output.pci-0000_00_05.0.analog-stereo plugin=mbeq_1197 label=mbeq control=-4.0,-2.8,-1.9,-1.9,-3.2,-6.0,-4.3,-2.7,-0.7,0.7,1.6,1.9,0.9,-1.2,-4.6
 set-default-sink ladspa_output.mbeq_1197.mbeq
-set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 65536
-set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo 0
+set-sink-volume alsa_output.pci-0000_00_05.0.analog-stereo 65536
+set-sink-mute alsa_output.pci-0000_00_05.0.analog-stereo 0
 ### END: Equalized audio configuration
