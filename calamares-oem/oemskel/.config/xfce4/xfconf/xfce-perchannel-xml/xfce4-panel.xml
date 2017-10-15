@@ -36,6 +36,8 @@
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="xfce4-power-manager"/>
       </property>
+      <property name="square-icons" type="bool" value="true"/>
+      <property name="show-frame" type="bool" value="true"/>
     </property>
     <property name="plugin-5" type="string" value="clock"/>
     <property name="plugin-6" type="string" value="pulseaudio">

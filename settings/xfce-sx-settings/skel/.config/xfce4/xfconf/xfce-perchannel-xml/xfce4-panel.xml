@@ -55,6 +55,8 @@
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="clipit"/>
       </property>
+      <property name="square-icons" type="bool" value="true"/>
+      <property name="show-frame" type="bool" value="true"/>
     </property>
     <property name="plugin-7" type="string" value="launcher">
       <property name="items" type="array">
