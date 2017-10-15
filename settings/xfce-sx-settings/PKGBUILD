@@ -3,7 +3,7 @@
 
 pkgname=xfce-sx-settings
 pkgver=20171015
-pkgrel=2
+pkgrel=3
 pkgdesc="Manjaro SX Xfce settings"
 arch=('any')
 _repo=project-sx
