@@ -137,6 +137,7 @@ xfwm4-gtk3
 
 ## XFCE Extras
 blueman
+bluez-utils
 ffmpegthumbnailer  # tumbler - for video thumbnails
 freetype2          # tumbler - for font thumbnails
 gconf              # fix qt-theme
