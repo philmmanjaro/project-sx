@@ -3,8 +3,8 @@
 
 pkgbase=calamares-oem
 pkgname=("calamares-oem-modules" "calamares-oem-sx-settings")
-pkgver=20171015
-pkgrel=2
+pkgver=20171016
+pkgrel=1
 arch=('any')
 _repo=project-sx
 _commit=7982707dedb2669d02b8c0a34b9036d30e75cdda
