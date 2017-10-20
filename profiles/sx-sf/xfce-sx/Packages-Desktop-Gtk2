@@ -101,6 +101,7 @@ pamac
 >extra gtk3-print-backends
 >extra hplip
 >extra splix
+>extra system-config-printer
 
 ## Optional dependencies for hplip
 >extra pyqt5-common # For hplip
@@ -139,6 +140,7 @@ xfwm4-themes
 
 ## XFCE Extras
 blueman
+bluez-utils
 ffmpegthumbnailer  # tumbler - for video thumbnails
 freetype2          # tumbler - for font thumbnails
 gconf              # fix qt-theme

@@ -101,6 +101,7 @@ pamac
 >extra gtk3-print-backends
 >extra hplip
 >extra splix
+>extra system-config-printer
 
 ## Optional dependencies for hplip
 >extra pyqt5-common # For hplip
@@ -150,7 +151,7 @@ network-manager-applet
 menulibre
 orage
 poppler-glib       # tumbler - for PDF thumbnails
-thunar-archive-plugin
+# thunar-archive-plugin # currently not compiling for thunar-gtk3
 thunar-media-tags-plugin
 # >extra xfce4-artwork
 xfce4-battery-plugin
