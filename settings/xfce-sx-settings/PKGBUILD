@@ -9,14 +9,15 @@ arch=('any')
 _repo=project-sx
 url="https://github.com/philmmanjaro/$_repo"
 license=('GPL3')
-depends=('manjaro-sx-wallpapers'
-	'manjaro-base-skel'
-	'manjaro-sx-icons'
-	'qt5ct'
-	'qt5-styleplugins'
-	'vibrancy-colors'
-	'adapta-maia-theme'
-	'xcursor-breeze')
+depends=('adapta-maia-theme'
+    'kvantum-qt5'
+    'manjaro-base-skel'
+    'manjaro-sx-icons'
+    'manjaro-sx-wallpapers'
+    'qt5ct'
+    'qt5-styleplugins'
+    'vibrancy-colors'
+    'xcursor-breeze')
 makedepends=('git')
 conflicts=('manjaro-desktop-settings')
 provides=('manjaro-desktop-settings')
@@ -24,13 +25,13 @@ source=("git+$url.git")
 md5sums=('SKIP')
 
 pkgver() {
-	date +%Y%m%d
+    date +%Y%m%d
 }
 
 package() {
-	cd $_repo/settings/$pkgname
-	install -d $pkgdir/etc
-	cp -r skel $pkgdir/etc
-	install -d $pkgdir/usr/share/glib-2.0/schemas
-	cp schemas/* $pkgdir/usr/share/glib-2.0/schemas
+    cd $_repo/settings/$pkgname
+    install -d $pkgdir/etc
+    cp -r skel $pkgdir/etc
+    install -d $pkgdir/usr/share/glib-2.0/schemas
+    cp schemas/* $pkgdir/usr/share/glib-2.0/schemas
 }
