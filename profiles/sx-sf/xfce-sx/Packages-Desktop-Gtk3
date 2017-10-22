@@ -151,7 +151,8 @@ network-manager-applet
 menulibre
 orage
 poppler-glib       # tumbler - for PDF thumbnails
-# thunar-archive-plugin # currently not compiling for thunar-gtk3
+thunar-archive-plugin
+file-roller # provides thunar context menu entry
 thunar-media-tags-plugin
 # >extra xfce4-artwork
 xfce4-battery-plugin
@@ -199,8 +200,8 @@ kvantum-manjaro
 ## Applications
 >extra catfish
 dmidecode # optional dependency inxi
-engrampa
-engrampa-thunar-plugin
+# engrampa
+# engrampa-thunar-plugin
 >extra firefox
 >extra ff-theme-util
 # >extra flashplugin
