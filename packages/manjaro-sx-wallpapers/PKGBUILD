@@ -1,7 +1,7 @@
 # Maintainer: Bernhard Landauer <oberon@manjaro.org>
 
 pkgname=manjaro-sx-wallpapers
-pkgver=20171011
+pkgver=20171023
 pkgrel=1
 pkgdesc="Wallpapers for Manjaro SX"
 arch=('any')
