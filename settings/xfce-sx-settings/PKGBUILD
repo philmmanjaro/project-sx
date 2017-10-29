@@ -2,8 +2,8 @@
 # Maintainer: Philip Müller <philm@manjaro.org>
 
 pkgname=xfce-sx-settings
-pkgver=20171015
-pkgrel=3
+pkgver=20171029
+pkgrel=2
 pkgdesc="Manjaro SX Xfce settings"
 arch=('any')
 _repo=project-sx
