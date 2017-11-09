@@ -266,6 +266,8 @@ mesa-demos
 xorg-twm
 xorg-xinit
 xorg-xkill
+libva-intel-driver
+
 
 ## Desktop Utils
 perl-file-mimeinfo
