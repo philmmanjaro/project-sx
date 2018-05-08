@@ -10,8 +10,11 @@ url="https://github.com/d4nj1/TLPUI"
 license=('GPL')
 depends=('tlp' 'python' 'polkit')
 makedepends=('git' 'python-setuptools')
-source=("git+$url.git")
-sha512sums=('SKIP')
+source=("git+$url.git" 'tlpui.desktop' 'tlpui_polkit' 'com.github.project-sx.tlpui.policy')
+sha256sums=('SKIP'
+            '3228242c76726667214eb897bf7bd46b12ed0618f10ad68f1d76bee7843f9fb0'
+            'f4364193876781ee679559beff8c6649aa4221155ac871a71a4b4c44e99d5d16'
+            '58712f9a7ed70ef309288be5811da9a76c5ef60c397ed729ebb63a8f513f2dbf')
 
 pkgver() {
   cd TLPUI
@@ -21,4 +24,8 @@ pkgver() {
 package() {
   cd TLPUI
   python setup.py install --root $pkgdir
+  mv "${pkgdir}"/usr/bin/tlpui "${pkgdir}"/usr/bin/tlp_ui
+  install -Dm755 "${srcdir}"/tlpui_polkit "${pkgdir}"/usr/bin/tlpui
+  install -Dm644 "${srcdir}"/tlpui.desktop "${pkgdir}"/usr/share/applications/tlpui.desktop
+  install -Dm644 "${srcdir}"/com.github.project-sx.tlpui.policy "${pkgdir}"/usr/share/polkit-1/actions/com.github.project-sx.tlpui.policy
 }
